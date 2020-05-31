@@ -20,12 +20,12 @@ public class CatalogController {
     public Product getProducts() {
         // Load data
         JSONParser jsonParser = new JSONParser();
-        try {
-            JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("../../../../../resources/products.json"));
-
-        } catch (IOException | ParseException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader("../../../../../resources/products.json"));
+//
+//        } catch (IOException | ParseException e) {
+//            e.printStackTrace();
+//        }
 
         // Return data
         return new Product(0, "Produkt 1", 12.4, "Ein tolles Produkt", "");
