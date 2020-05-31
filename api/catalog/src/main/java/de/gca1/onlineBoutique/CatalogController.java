@@ -7,10 +7,7 @@ import org.json.simple.parser.ParseException;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.File;
 import java.io.FileReader;
@@ -23,6 +20,7 @@ public class CatalogController {
     private JSONParser jsonParser;
     private ArrayList<Product> productList;
     @GetMapping("/catalog")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ArrayList<Product> getProducts() {
         // Load data
         if(productList == null) {
@@ -33,6 +31,7 @@ public class CatalogController {
     }
 
     @RequestMapping("/catalog/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<Object> getProductById(@PathVariable("id") int id) {
         if(id >= productList.size())  return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         return ResponseEntity.status(HttpStatus.OK).body(productList.get(id));
