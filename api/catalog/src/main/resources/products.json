@@ -2,66 +2,66 @@
     {
         "id": 0,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild0.png"
     },
     {
         "id": 1,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild1.png"
     },
     {
         "id": 2,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild2.png"
     },    {
         "id": 3,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild3.png"
     },    {
         "id": 4,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild4.png"
     },
     {
         "id": 5,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild5.png"
     },
     {
         "id": 6,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild6.png"
     },
     {
         "id": 7,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild7.png"
     },    {
         "id": 8,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild8.png"
     },    {
         "id": 9,
         "name": "",
-        "price": 0.0,
+        "price": 0,
         "description": "",
         "imageUrl": "http://localhost/content/bild9.png"
     }
