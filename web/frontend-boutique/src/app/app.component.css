@@ -1,0 +1,8 @@
+.banner {
+  background: black;
+  width: 100%;
+  height: 205px;
+  background-image: url("../../ressource/image/bannerv2.PNG");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
