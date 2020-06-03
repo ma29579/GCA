@@ -1,7 +1,8 @@
 .header{
   width: 100%;
   height: 50px;
-  background-color: aqua;
+  background-color:  rgb(40, 43, 48);
+
 }
 
 .banner {
@@ -15,4 +16,41 @@
 
 .router-container{
   margin: 15px;
+}
+
+.shoppingCart {
+  position: absolute;
+  right:50px;
+  color: white;
+  font-size: 15px;
+  border-style: solid;
+  padding: 10px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-width: 2px;
+  margin-top: 5px;
+  cursor: pointer;
+  top: 0;
+}
+.shoppingCart:hover {
+  border-color: #3a75fd;
+}
+
+.shoppingCartText{
+  margin: 0 0 0 10px;
+}
+.logo {
+  background-image: url("../../ressource/image/logo.png");
+  width: 200px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-size: 200px 50px;
+
+}
+.logoWrapper{
+  margin-left: 15px;
+  display: flex;
+  width: 215px;
 }
