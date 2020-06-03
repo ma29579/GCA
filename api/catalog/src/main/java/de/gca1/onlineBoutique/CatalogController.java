@@ -5,10 +5,14 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,6 +23,7 @@ public class CatalogController {
 
     private JSONParser jsonParser;
     private ArrayList<Product> productList;
+
     @GetMapping("/catalog")
     @CrossOrigin(origins = "http://localhost:4200")
     public ArrayList<Product> getProducts() {
@@ -28,6 +33,21 @@ public class CatalogController {
         }
         // Return data
         return productList;
+    }
+
+    @RequestMapping("/pictures/{id}")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public void getPicture(HttpServletResponse response, @PathVariable("id") int id){
+
+        var imgFile = new ClassPathResource("/static/images/product_id_" + id + ".png");
+        response.setContentType(MediaType.IMAGE_PNG_VALUE);
+
+        try {
+            StreamUtils.copy(imgFile.getInputStream(),response.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     @RequestMapping("/catalog/{id}")

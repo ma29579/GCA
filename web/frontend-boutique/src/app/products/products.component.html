@@ -1,5 +1,11 @@
 <h2>Unsere Produkte</h2>
 
-<div *ngFor="let product of products">
-  {{product.id}}, {{product.name}}, {{product.price}},{{product.description}}
+<div class="product-containter">
+  <div *ngFor="let product of products">
+    <div class="product-showcase">
+      <p>{{product.name}}</p>
+      <p> Preis: {{product.price}}</p>
+      <img src="{{product.imageUrl}}">
+    </div>
+  </div>
 </div>
