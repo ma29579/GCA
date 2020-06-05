@@ -3,66 +3,66 @@
         "id": 0,
         "name": "Verführerische Seiden-Jeans",
         "price": 55,
-        "description": "",
-        "imageUrl": "http://localhost/pictures/0"
+        "description": "Eine kurze Hose, für heiße Tage!",
+        "imageUrl": "http://localhost:8080/pictures/0"
     },
     {
         "id": 1,
-        "name": "Hellblaues T-Shirt",
+        "name": "Grünes Sommerkleid",
         "price": 63,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild1.png"
+        "description": "Ein luftiges Kleid!",
+        "imageUrl": "http://localhost:8080/pictures/1"
     },
     {
         "id": 2,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild2.png"
+        "name": "Rote Krawatte",
+        "price": 20,
+        "description": "Eine rote Krawatte.",
+        "imageUrl": "http://localhost:8080/pictures/2"
     },    {
         "id": 3,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild3.png"
+        "name": "Blaue Bootsschuhe",
+        "price": 55,
+        "description": "Schicke blaue Schuhe für einen Bootsausflug!",
+        "imageUrl": "http://localhost:8080/pictures/3"
     },    {
         "id": 4,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild4.png"
+        "name": "Nike Sportschuhe",
+        "price": 99,
+        "description": "Laufschuhe für einen guten Lauf!",
+        "imageUrl": "http://localhost:8080/pictures/4"
     },
     {
         "id": 5,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild5.png"
+        "name": "Schwarzes Sakko",
+        "price": 119,
+        "description": "Ein Sakko für den gehobenen Anlass.",
+        "imageUrl": "http://localhost:8080/pictures/5"
     },
     {
         "id": 6,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild6.png"
+        "name": "Buntes Karro-Hemd",
+        "price": 49,
+        "description": "Ein angenehmes, weiches Material, für das bunte Karro-Hemd.",
+        "imageUrl": "http://localhost:8080/pictures/6"
     },
     {
         "id": 7,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild7.png"
+        "name": "Grauer Hut",
+        "price": 39,
+        "description": "Ein grauer Hut, für einen edlen Zweck.",
+        "imageUrl": "http://localhost:8080/pictures/7"
     },    {
         "id": 8,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild8.png"
+        "name": "Blaues T-Shirt",
+        "price": 25,
+        "description": "Für jeden Zweck geeignet.",
+        "imageUrl": "http://localhost:8080/pictures/8"
     },    {
         "id": 9,
-        "name": "",
-        "price": 0,
-        "description": "",
-        "imageUrl": "http://localhost/content/bild9.png"
+        "name": "Schwarzes Hemd",
+        "price": 79,
+        "description": "Kleidet jedem Träger, zu jedem Anlass.",
+        "imageUrl": "http://localhost:8080/pictures/9"
     }
 ]

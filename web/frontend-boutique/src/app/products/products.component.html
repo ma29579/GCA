@@ -1,11 +1,11 @@
-<h2>Unsere Produkte</h2>
+<h1>Unsere Produkte</h1>
 
 <div class="product-containter">
-  <div *ngFor="let product of products">
-    <div class="product-showcase">
-      <p>{{product.name}}</p>
-      <p> Preis: {{product.price}}</p>
-      <img src="{{product.imageUrl}}">
-    </div>
+  <div class="product-showcase" *ngFor="let product of products">
+    <div class="image-container" [ngStyle]="{'background-image':'url(' + product.imageUrl + ')'}"></div>
+    <h3>{{product.name}}</h3>
+    <p> {{product.price}} € </p>
+    <p> {{product.description}}</p>
   </div>
 </div>
+
