@@ -9,4 +9,10 @@ import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 export class AppComponent {
   title = 'frontend-boutique';
   faShoppingCart = faShoppingCart;
+
+  cartAmount = 0;
+
+  onNewItem(){
+    this.cartAmount++;
+  }
 }
