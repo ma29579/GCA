@@ -1,9 +1,9 @@
 <div class="header">
-  <div class="logoWrapper"><div class="logo"></div></div>
-  <div class="shoppingCart"><fa-icon [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Warenkorb</p></div>
+  <div class="logoWrapper"><div [routerLink]="['/']" class="logo"></div></div>
+  <div class="shoppingCart" [routerLink]="['/cart']"><fa-icon [icon]="faShoppingCart"></fa-icon><div class="numberIcon">{{cartAmount}}</div><p class="shoppingCartText">Warenkorb</p></div>
 </div>
 <div class="banner"></div>
 <div class="router-container">
-  <router-outlet></router-outlet>
+  <router-outlet [onNewItem]="onNewItem()"></router-outlet>
 </div>
 
