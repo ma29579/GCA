@@ -25,7 +25,7 @@ public class CatalogController {
     private ArrayList<Product> productList;
 
     @GetMapping("/catalog")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts() {
         // Load data
         if(productList == null) {
@@ -36,7 +36,7 @@ public class CatalogController {
     }
 
     @RequestMapping("/pictures/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public void getPicture(HttpServletResponse response, @PathVariable("id") int id){
 
         var imgFile = new ClassPathResource("/static/images/product_id_" + id + ".png");
@@ -51,14 +51,13 @@ public class CatalogController {
     }
 
     @RequestMapping("/catalog/{id}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Object> getProductById(@PathVariable("id") int id) {
         if(id >= productList.size())  return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
         return ResponseEntity.status(HttpStatus.OK).body(productList.get(id));
     }
 
     private Boolean getJSONData() {
-        System.out.println("GET DATA CALLED");
         JSONParser jsonParser = new JSONParser();
         productList = new ArrayList<Product>();
 
