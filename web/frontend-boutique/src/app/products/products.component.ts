@@ -18,4 +18,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
+  callCartAPI(param: {}) {
+    console.log(param);
+  }
 }

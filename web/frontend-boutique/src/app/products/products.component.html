@@ -2,7 +2,7 @@
 
 <div class="product-containter">
   <div class="product-showcase" *ngFor="let product of products">
-    <div class="image-container" [ngStyle]="{'background-image':'url(' + product.imageUrl + ')'}"></div>
+    <div class="image-container" (click)="callCartAPI(product.id)" [ngStyle]="{'background-image':'url(' + product.imageUrl + ')'}"></div>
     <h3>{{product.name}}</h3>
     <p> {{product.price}} € </p>
     <p> {{product.description}}</p>
