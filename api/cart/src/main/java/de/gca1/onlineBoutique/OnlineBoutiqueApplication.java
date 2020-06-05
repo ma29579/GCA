@@ -6,9 +6,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 
-
-import java.util.Collections;
-
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class })
 public class OnlineBoutiqueApplication {
 
@@ -17,9 +14,9 @@ public class OnlineBoutiqueApplication {
 	}
 
 	@Bean
-	ApplicationRunner init(CatalogController catalogController) {
+	ApplicationRunner init(CartController catalogController) {
 		return args -> {
-			catalogController.getProducts();
+			//catalogController.getProducts();
 		};
 	}
 	
