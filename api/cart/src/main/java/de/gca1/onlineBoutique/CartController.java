@@ -4,89 +4,94 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.UUID;
+import java.util.logging.Logger;
 
 @RestController
 public class CartController {
 
+    private static final Logger log = (Logger) LoggerFactory.getLogger(CartController.class);
 
-    @RequestMapping("/cart/addProduct/{id}")
+    @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public boolean getProductByID(HttpServletRequest request, HttpServletResponse response, @PathVariable("id") int id){
+    public void getProductByID(@PathVariable("productID") int productID, @PathVariable("userID") String userID) {
 
-        CartItemCollection cartItemCollection;
-        boolean returnValue;
-
-        if(request.getSession().getAttribute("CartItemCollection") == null){
-            cartItemCollection = new CartItemCollection();
-            returnValue = cartItemCollection.addProductID(id);
-            request.getSession().setAttribute("CartItemCollection",cartItemCollection);
-        } else {
-            cartItemCollection = (CartItemCollection) request.getSession().getAttribute("CartItemCollection");
-            returnValue = cartItemCollection.addProductID(id);
+        try {
+            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            //LOGGEN
+            databaseHelper.addProduct(userID, productID);
+        } catch (SQLException e) {
+            //LOGGEN
+            e.printStackTrace();
         }
-
-        request.getSession().setAttribute("CartItemCollection",cartItemCollection);
-        return returnValue;
-
     }
 
-    @RequestMapping("/cart")
+    @RequestMapping("/cart/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ArrayList<Product> getProducts(HttpServletRequest request, HttpServletResponse response){
+    public ArrayList<Product> getProducts(@PathVariable("userID") String userID) {
 
-        CartItemCollection cartItemCollection;
+        ArrayList<Integer> itemsByID = new ArrayList<>();
         ArrayList<Product> cartProducts = new ArrayList<>();
         StringBuffer result = new StringBuffer();
-        String readLine;
 
-        if(request.getSession().getAttribute("CartItemCollection") != null){
+        try {
+            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            itemsByID = databaseHelper.getAllEntries(userID);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
-            cartItemCollection = (CartItemCollection) request.getSession().getAttribute("CartItemCollection");
+        if (!itemsByID.isEmpty()) {
 
-            if(!cartItemCollection.getProductIDs().isEmpty()){
+            URL url;
+            HttpURLConnection connection;
 
-                URL url;
-                HttpURLConnection connection;
+            Collections.sort(itemsByID);
 
-                for(Integer i : cartItemCollection.getProductIDs()){
-                    try {
-                        url  = new URL("http://localhost:8080/catalog/" + i.toString());
-                        connection = (HttpURLConnection) url.openConnection();
+            for (Integer i : itemsByID) {
+                try {
+                    url = new URL("http://localhost:8080/catalog/" + i.toString());
+                    connection = (HttpURLConnection) url.openConnection();
 
-                        if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
-                            JSONObject product = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));
+                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                        JSONObject product = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));
 
-                            int id = ((Long) product.get("id")).intValue();
-                            String name = (String) product.get("name");
-                            double price =  (Double) product.get("price");
-                            String description = (String) product.get("description");
-                            String imageUrl = (String) product.get("imageUrl");
+                        int id = ((Long) product.get("id")).intValue();
+                        String name = (String) product.get("name");
+                        double price = (Double) product.get("price");
+                        String description = (String) product.get("description");
+                        String imageUrl = (String) product.get("imageUrl");
 
-                            cartProducts.add(new Product(id,name,price,description,imageUrl));
+                        cartProducts.add(new Product(id, name, price, description, imageUrl));
 
-                        }
-
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (ParseException e) {
-                        e.printStackTrace();
                     }
+
+                } catch (MalformedURLException e) {
+                    //LOGGEN
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    //LOGGEN
+                    e.printStackTrace();
+                } catch (ParseException e) {
+                    //LOGGEN
+                    e.printStackTrace();
                 }
-
-                return cartProducts;
-
             }
+
+            return cartProducts;
 
         }
 
@@ -94,17 +99,44 @@ public class CartController {
 
     }
 
-    @RequestMapping("/cart/itemNumber")
+    @RequestMapping("/cart/itemNumber/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public int getItemNumber(HttpServletRequest request, HttpServletResponse response){
+    public int getItemNumber(@PathVariable("userID") String userID) {
 
-        CartItemCollection cartItemCollection;
-
-        if(request.getSession().getAttribute("CartItemCollection") != null){
-           cartItemCollection = (CartItemCollection) request.getSession().getAttribute("CartItemCollection");
-           return cartItemCollection.getProductIDs().size();
-        }
-        else
+        try {
+            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            //LOGGEN
+            Integer totalItemNumberByUserID = databaseHelper.getEntryNumberByUserID(userID);
+            return totalItemNumberByUserID;
+        } catch (SQLException e) {
+            //LOGGEN
             return 0;
+        }
+
     }
+
+    @RequestMapping("/cart/init")
+    @CrossOrigin(origins = "http://localhost:4200")
+    public String createUserID() {
+
+        String userID = UUID.randomUUID().toString();
+
+        try {
+            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            boolean checkuserIDInsert = databaseHelper.addUserID(userID);
+
+            while (!checkuserIDInsert) {
+                userID = UUID.randomUUID().toString();
+                checkuserIDInsert = databaseHelper.addUserID(userID);
+            }
+
+            return userID;
+
+        } catch (SQLException e) {
+            //LOGGEN
+            e.printStackTrace();
+            return "Keine Interaktion möglich";
+        }
+    }
+
 }
