@@ -11,7 +11,6 @@ import {EventEmitter} from 'events';
 export class ProductsComponent implements OnInit {
 
   // @ts-ignore
-  @Output() onNewItem: EventEmitter<any> = new EventEmitter();
   products: Array<any>;
 
   constructor(private productService: ProductService, private cartService: CartService) { }
@@ -25,7 +24,6 @@ export class ProductsComponent implements OnInit {
   callCartAPI(param: number) {
     this.cartService.addProductByID(param).subscribe(data => {
         console.log(data);
-        this.onNewItem.emit();
     });
   }
 
