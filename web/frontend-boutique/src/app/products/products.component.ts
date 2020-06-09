@@ -23,7 +23,9 @@ export class ProductsComponent implements OnInit {
 
   callCartAPI(param: number) {
     this.cartService.addProductByID(param).subscribe(data => {
-        console.log(data);
+        this.cartService.getCartAmount().subscribe(amount => {
+          this.cartService.setCartAmount(amount);
+        });
     });
   }
 

@@ -9,10 +9,14 @@ export class CartService implements HttpInterceptor {
   private node = new Subject<number>();
 
   shoppingCartItems$ = this.node.asObservable();
+
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
     request = request.clone({
-      withCredentials: true
+      withCredentials: true,
+      setHeaders: {
+        Authorization: `Basic 1c56413a-3e07-40a0-b279-c93fc42c49d0`
+      }
     });
 
     return next.handle(request);
@@ -22,16 +26,21 @@ export class CartService implements HttpInterceptor {
 
 
   getCart(): Observable<any> {
-    return this.http.get('//localhost:8081/cart');
+    return this.http.get('//localhost:8081/cart/' + localStorage.getItem('userId'));
   }
 
   getCartAmount(): Observable<any> {
-    return this.http.get('//localhost:8081/cart/itemNumber');
+    return this.http.get('//localhost:8081/cart/itemNumber/' + localStorage.getItem('userId'));
+  }
+
+  setCartAmount(amount: number) {
+    this.node.next(amount);
   }
 
   addProductByID(id: number): Observable<any> {
-    console.log(id);
-    this.node.next(1);
-    return this.http.get('//localhost:8081/cart/addProduct/' + id);
+    return this.http.get('//localhost:8081/cart/addProduct/' + id + '/' + localStorage.getItem('userId'));
+  }
+  createUser(): Observable<any> {
+    return this.http.get('//localhost:8081/cart/init');
   }
 }

@@ -1,10 +1,12 @@
 package de.gca1.onlineBoutique;
 
+import javax.xml.transform.Result;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import static java.sql.DriverManager.getConnection;
 
@@ -18,37 +20,29 @@ public class DatabaseHelper {
         conn = getConnection(databaseURL, username, password);
     }
 
-    public boolean addUserID(String userID) throws SQLException {
+    public User addUserID() throws SQLException {
 
-        String searchStatement = "SELECT COUNT(*) AS quantity FROM shopUser WHERE userid = ?";
-        String insertStatement = "INSERT INTO shopUser (userid) VALUES (?)";
-
-        stmt = conn.prepareStatement(searchStatement);
-        stmt.setString(1, userID);
-        results = stmt.executeQuery();
-
-        results.next();
-        int resultFromSearchStatement = results.getInt("quantity");
-
-        if (resultFromSearchStatement == 0) {
+        String insertStatement = "INSERT INTO shopUser (userId) VALUES (uuid_in(md5(random()::text || clock_timestamp()::text)::cstring)); ";
+         String getLastUser = "SELECT userId, creationTime FROM shopUser ORDER BY CreationTime DESC LIMIT 1;";
 
             stmt = conn.prepareStatement(insertStatement);
-            stmt.setString(1, userID);
             stmt.execute();
 
+            stmt = conn.prepareStatement(getLastUser);
+            results = stmt.executeQuery();
+            results.next();
+            User resultUser = new User(results.getString("userId"), results.getTimestamp("creationTime"), null);
+
+
             stmt.close();
-            return true;
-        } else {
-            stmt.close();
-            return false;
-        }
+            return resultUser;
     }
 
-    public void addProduct(String userID, int productID) throws SQLException {
+    public void addProduct(UUID userID, int productID) throws SQLException {
 
-        String insertIntoTable = "INSERT INTO itemsInCart (shopuserid, productID) VALUES( ?, ? )";
+        String insertIntoTable = "INSERT INTO itemsInCart (shopUserId, productID) VALUES( ?, ? )";
         stmt = conn.prepareStatement(insertIntoTable);
-        stmt.setString(1, userID);
+        stmt.setObject(1, userID);
         stmt.setInt(2, productID);
 
         stmt.execute();
@@ -56,27 +50,27 @@ public class DatabaseHelper {
     }
 
 
-    public Integer getEntryNumberByUserID(String userID) throws SQLException {
+    public Integer getEntryNumberByUserID(UUID userID) throws SQLException {
 
-        String searchStatement = "SELECT COUNT(*) AS quantity FROM itemsInCart WHERE shoperUserID = ?";
+        String searchStatement = "SELECT COUNT(*) AS quantity FROM itemsInCart WHERE shopUserID = ?";
 
         stmt = conn.prepareStatement(searchStatement);
-        stmt.setString(1, userID);
+        stmt.setObject(1, userID);
 
         results = stmt.executeQuery();
-
+        results.next();
         Integer countedItems = Integer.valueOf(results.getInt("quantity"));
 
         return countedItems;
     }
 
-    public ArrayList<Integer> getAllEntries(String userID) throws SQLException {
+    public ArrayList<Integer> getAllEntries(UUID userID) throws SQLException {
 
         ArrayList<Integer> entries = new ArrayList<>();
-        String searchStatement = "SELECT productID FROM itemsInCart WHERE shoperUserId = ?";
+        String searchStatement = "SELECT productID FROM itemsInCart WHERE shopUserId = ?";
 
         stmt = conn.prepareStatement(searchStatement);
-        stmt.setString(1, userID);
+        stmt.setObject(1, userID);
 
         results = stmt.executeQuery();
 

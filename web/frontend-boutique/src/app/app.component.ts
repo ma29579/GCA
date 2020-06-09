@@ -16,6 +16,14 @@ export class AppComponent implements OnInit{
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    this.cartService.shoppingCartItems$.subscribe(n => this.cartAmount++);
+    if (!localStorage.getItem('userId')) {
+      this.cartService.createUser().subscribe(user => { console.log(user); localStorage.setItem('userId', user.userId); });
+    } else {
+      console.log('Existing user found: ', localStorage.getItem('userId'));
+      this.cartService.getCartAmount().subscribe(amount => {
+        this.cartService.setCartAmount(amount);
+      });
+    }
+    this.cartService.shoppingCartItems$.subscribe(n => this.cartAmount = n);
   }
 }

@@ -64,7 +64,7 @@ public class CatalogController {
         try {
             String filePath = new File("").getAbsolutePath();
             JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(filePath +"\\src\\main\\resources\\products.json"));
-            for(int i =0; i< jsonArray.size(); i++) {
+            for (int i =0; i< jsonArray.size(); i++) {
                 JSONObject temp = (JSONObject) jsonArray.get(i);
 
                 int id = ((Long) temp.get("id")).intValue();

@@ -5,6 +5,8 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,21 +29,21 @@ public class CartController {
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public void addProduct(@PathVariable("productID") int productID, @PathVariable("userID") String userID) {
+    public ResponseEntity<Boolean> addProduct(@PathVariable("productID") int productID, @PathVariable("userID") UUID userID) {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             //LOGGEN
             databaseHelper.addProduct(userID, productID);
+            return ResponseEntity.status(HttpStatus.OK).body(true);
         } catch (SQLException e) {
-            //LOGGEN
-            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
         }
     }
 
     @RequestMapping("/cart/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public ArrayList<Product> getProducts(@PathVariable("userID") String userID) {
+    public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
 
         ArrayList<Integer> itemsByID = new ArrayList<>();
         ArrayList<Product> cartProducts = new ArrayList<>();
@@ -101,7 +103,7 @@ public class CartController {
 
     @RequestMapping("/cart/itemNumber/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public int getItemNumber(@PathVariable("userID") String userID) {
+    public int getItemNumber(@PathVariable("userID") UUID userID) {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
@@ -117,25 +119,19 @@ public class CartController {
 
     @RequestMapping("/cart/init")
     @CrossOrigin(origins = "*")
-    public String createUserID() {
-
-        String userID = UUID.randomUUID().toString();
+    public ResponseEntity<User> createUserID(HttpServletRequest req) {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
-            boolean checkuserIDInsert = databaseHelper.addUserID(userID);
+            User user = databaseHelper.addUserID();
 
-            while (!checkuserIDInsert) {
-                userID = UUID.randomUUID().toString();
-                checkuserIDInsert = databaseHelper.addUserID(userID);
-            }
 
-            return userID;
+            return ResponseEntity.status(HttpStatus.OK).body(user);
 
         } catch (SQLException e) {
             //LOGGEN
             e.printStackTrace();
-            return "Keine Interaktion möglich";
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
 
