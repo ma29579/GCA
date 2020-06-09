@@ -23,14 +23,14 @@ import java.util.logging.Logger;
 @RestController
 public class CartController {
 
-    private static final Logger log = (Logger) LoggerFactory.getLogger(CartController.class);
+    //private static final Logger log = (Logger) LoggerFactory.getLogger(CartController.class);
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public void getProductByID(@PathVariable("productID") int productID, @PathVariable("userID") String userID) {
+    public void addProduct(@PathVariable("productID") int productID, @PathVariable("userID") String userID) {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             //LOGGEN
             databaseHelper.addProduct(userID, productID);
         } catch (SQLException e) {
@@ -48,7 +48,7 @@ public class CartController {
         StringBuffer result = new StringBuffer();
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             itemsByID = databaseHelper.getAllEntries(userID);
         } catch (SQLException e) {
             e.printStackTrace();
@@ -104,7 +104,7 @@ public class CartController {
     public int getItemNumber(@PathVariable("userID") String userID) {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             //LOGGEN
             Integer totalItemNumberByUserID = databaseHelper.getEntryNumberByUserID(userID);
             return totalItemNumberByUserID;
@@ -116,13 +116,13 @@ public class CartController {
     }
 
     @RequestMapping("/cart/init")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public String createUserID() {
 
         String userID = UUID.randomUUID().toString();
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("abc", "abc", "abc");
+            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             boolean checkuserIDInsert = databaseHelper.addUserID(userID);
 
             while (!checkuserIDInsert) {

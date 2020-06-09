@@ -20,13 +20,14 @@ public class DatabaseHelper {
 
     public boolean addUserID(String userID) throws SQLException {
 
-        String searchStatement = "SELECT COUNT(*) AS quantity FROM shopUser WHERE id = ?";
-        String insertStatement = "INSERT INTO shopUser (id) VALUES (?)";
+        String searchStatement = "SELECT COUNT(*) AS quantity FROM shopUser WHERE userid = ?";
+        String insertStatement = "INSERT INTO shopUser (userid) VALUES (?)";
 
         stmt = conn.prepareStatement(searchStatement);
         stmt.setString(1, userID);
         results = stmt.executeQuery();
 
+        results.next();
         int resultFromSearchStatement = results.getInt("quantity");
 
         if (resultFromSearchStatement == 0) {
@@ -45,7 +46,7 @@ public class DatabaseHelper {
 
     public void addProduct(String userID, int productID) throws SQLException {
 
-        String insertIntoTable = "INSERT INTO itemsInCart (shopUserID, productID) VALUES( ?, ? )";
+        String insertIntoTable = "INSERT INTO itemsInCart (shopuserid, productID) VALUES( ?, ? )";
         stmt = conn.prepareStatement(insertIntoTable);
         stmt.setString(1, userID);
         stmt.setInt(2, productID);
