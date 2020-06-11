@@ -20,9 +20,16 @@ public class DatabaseHelper {
     }
 
 
-    public void addProduct(UUID userID, UUID trackingNumber) throws SQLException {
+    public void addProduct(UUID userID) throws SQLException {
 
-        String insertStatement = "INSERT INTO";
+        String insertStatement = "INSERT INTO trackingNumber " +
+                "(trackingNumber, userID) VALUES(uuid_in(md5(random()::text || clock_timestamp()::text)::cstring), ?)";
+
+        stmt = conn.prepareStatement(insertStatement);
+        stmt.setObject(1,userID);
+
+        stmt.execute();
+        stmt.close();
     }
 
 }

@@ -23,30 +23,43 @@ public class DatabaseHelper {
     public User addUserID() throws SQLException {
 
         String insertStatement = "INSERT INTO shopUser (userId) VALUES (uuid_in(md5(random()::text || clock_timestamp()::text)::cstring)); ";
-         String getLastUser = "SELECT userId, creationTime FROM shopUser ORDER BY CreationTime DESC LIMIT 1;";
+        String getLastUser = "SELECT userId, creationTime FROM shopUser ORDER BY CreationTime DESC LIMIT 1;";
 
-            stmt = conn.prepareStatement(insertStatement);
-            stmt.execute();
+        stmt = conn.prepareStatement(insertStatement);
+        stmt.execute();
 
-            stmt = conn.prepareStatement(getLastUser);
-            results = stmt.executeQuery();
-            results.next();
-            User resultUser = new User(results.getString("userId"), results.getTimestamp("creationTime"), null);
+        stmt = conn.prepareStatement(getLastUser);
+        results = stmt.executeQuery();
+        results.next();
+        User resultUser = new User(results.getString("userId"), results.getTimestamp("creationTime"), null);
 
 
-            stmt.close();
-            return resultUser;
+        stmt.close();
+        return resultUser;
     }
 
     public void addProduct(UUID userID, int productID) throws SQLException {
 
-        String insertIntoTable = "INSERT INTO itemsInCart (shopUserId, productID) VALUES( ?, ? )";
-        stmt = conn.prepareStatement(insertIntoTable);
+        String checkStatement = "SELECT COUNT(*) AS quantity FROM itemsInCart WHERE shopUserId = ? AND productID = ?";
+        stmt = conn.prepareStatement(checkStatement);
+
         stmt.setObject(1, userID);
         stmt.setInt(2, productID);
 
-        stmt.execute();
-        stmt.close();
+        results = stmt.executeQuery();
+
+        results.next();
+
+        if (results.getInt("quantity") == 0) {
+
+            String insertIntoTable = "INSERT INTO itemsInCart (shopUserId, productID) VALUES( ?, ? )";
+            stmt = conn.prepareStatement(insertIntoTable);
+            stmt.setObject(1, userID);
+            stmt.setInt(2, productID);
+
+            stmt.execute();
+            stmt.close();
+        }
     }
 
 
@@ -81,12 +94,12 @@ public class DatabaseHelper {
         return entries;
     }
 
-    public void deleteAllCartEntriesByUserID(UUID userID) throws SQLException{
+    public void deleteAllCartEntriesByUserID(UUID userID) throws SQLException {
 
         String deletionStatement = "DELETE * FROM itemsInCart WHERE shopUserId = ?";
 
         stmt = conn.prepareStatement(deletionStatement);
-        stmt.setObject(1,userID);
+        stmt.setObject(1, userID);
 
         stmt.execute();
 

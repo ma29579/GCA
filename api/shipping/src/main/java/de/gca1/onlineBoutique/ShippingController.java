@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.SQLException;
 import java.util.UUID;
 
 @RestController
@@ -30,7 +31,13 @@ public class ShippingController {
     @CrossOrigin(origins = "*")
     public ResponseEntity<OrderInformation> calculateShippingCosts(@PathVariable("userID") UUID userID) {
 
-        String insertStatement;
+        try {
+            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/shipping", "gca", "gca");
+            databaseHelper.addProduct(userID);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
 
         return null;
     }
