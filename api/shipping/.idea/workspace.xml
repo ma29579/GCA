@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/de/gca1/onlineBoutique/ShippingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/de/gca1/onlineBoutique/ShippingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/de/gca1/onlineBoutique/ShippingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/de/gca1/onlineBoutique/ShippingController.class" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -40,7 +41,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -52,6 +53,18 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\catalog\src\main\resources\static\images" />
     </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="OnlineBoutiqueApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -84,12 +97,24 @@
       <workItem from="1591432889417" duration="600000" />
       <workItem from="1591623811867" duration="146000" />
       <workItem from="1591687238937" duration="623000" />
-      <workItem from="1591858190806" duration="3799000" />
+      <workItem from="1591858190806" duration="2562000" />
+      <workItem from="1591861637867" duration="840000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="181" key="#Project_Structure" timestamp="1591378752406">

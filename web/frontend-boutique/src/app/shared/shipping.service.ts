@@ -10,7 +10,7 @@ export class ShippingService {
   }
 
   getShippingCost(cost: number): Observable<any> {
-    return this.http.get('//localhost:8080/shipping/cost/' + cost);
+    return this.http.get('//localhost:8082/shipping/cost/' + cost);
   }
 
 }

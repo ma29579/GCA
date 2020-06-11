@@ -22,6 +22,7 @@ export class CartService implements HttpInterceptor {
     return next.handle(request);
   }
   constructor(private http: HttpClient) {
+    this.node.next(0);
   }
 
 

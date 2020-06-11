@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProductService} from '../shared/products.service';
 import {CartService} from '../shared/cart.service';
 import {faShoppingCart, faTrash} from '@fortawesome/free-solid-svg-icons';
-import {ShippingService} from "../shared/shipping.service";
+import {ShippingService} from '../shared/shipping.service';
 
 @Component({
   selector: 'app-cart',
@@ -21,7 +21,6 @@ export class CartComponent implements OnInit {
   constructor(private productService: ProductService, private cartService: CartService, private shippingService: ShippingService) { }
 
   ngOnInit(): void {
-    console.log("TTT");
     this.cartService.getCart().subscribe(data => {
       this.cartItem = data;
       data.forEach(x => this.articleCost += x.price );
