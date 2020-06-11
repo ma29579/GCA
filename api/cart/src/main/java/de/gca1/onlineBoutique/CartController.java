@@ -117,9 +117,10 @@ public class CartController {
 
     }
 
+
     @RequestMapping("/cart/init")
     @CrossOrigin(origins = "*")
-    public ResponseEntity<User> createUserID(HttpServletRequest req) {
+    public ResponseEntity<User> createUserID() {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
@@ -134,5 +135,22 @@ public class CartController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
+
+    @RequestMapping("/cart/empty/{userID}")
+    @CrossOrigin(origins = "*")
+    public void emptyCartByUserID(UUID userID) {
+
+        try {
+            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
+            User user = databaseHelper.addUserID();
+            databaseHelper.deleteAllCartEntriesByUserID(userID);
+
+        } catch (SQLException e) {
+            //LOGGEN
+            e.printStackTrace();
+        }
+    }
+
+
 
 }

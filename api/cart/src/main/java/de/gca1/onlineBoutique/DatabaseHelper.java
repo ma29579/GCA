@@ -80,4 +80,15 @@ public class DatabaseHelper {
 
         return entries;
     }
+
+    public void deleteAllCartEntriesByUserID(UUID userID) throws SQLException{
+
+        String deletionStatement = "DELETE * FROM itemsInCart WHERE shopUserId = ?";
+
+        stmt = conn.prepareStatement(deletionStatement);
+        stmt.setObject(1,userID);
+
+        stmt.execute();
+
+    }
 }
