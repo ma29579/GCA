@@ -1,1 +1,47 @@
-<p>cart works!</p>
+<h1>Warenkorb</h1>
+
+<div class="contentWrapper">
+  <div class="menu">
+    <div class="shoppingCart" [routerLink]="['/']"><fa-icon [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
+    <div class="shoppingCart"><fa-icon [icon]="faTrash"></fa-icon><p class="shoppingCartText">Warenkorb leeren</p></div>
+  </div>
+  <div class="content">
+    <table>
+      <thead>
+      <tr>
+        <th></th>
+        <th>
+          Artikel
+        </th>
+        <th>
+          Preis
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="product-showcase" *ngFor="let product of cartItem">
+        <td class="imageColumn"><div class="image-container" [ngStyle]="{'background-image':'url(' + product.imageUrl + ')'}"></div></td>
+        <td><h3> {{product.name}}</h3><p>{{product.description}}</p></td>
+        <td><p> {{product.price}} € </p></td>
+      </tr>
+      <tr class="summaryLine">
+        <td></td>
+        <td>Artikelkosten:</td>
+        <td>{{articleCost}}€</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Versandkosten:</td>
+        <td>{{shippingCost}}€</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><b>Gesamtsumme:</b></td>
+        <td><b>{{shippingCost + articleCost}}€</b></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

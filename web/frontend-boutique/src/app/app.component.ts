@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
-import {CartService} from "./shared/cart.service";
+import {CartService} from './shared/cart.service';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +24,6 @@ export class AppComponent implements OnInit{
         this.cartService.setCartAmount(amount);
       });
     }
-    this.cartService.shoppingCartItems$.subscribe(n => this.cartAmount = n);
+    this.cartService.shoppingCartItemsCount$.subscribe(n => this.cartAmount = n);
   }
 }

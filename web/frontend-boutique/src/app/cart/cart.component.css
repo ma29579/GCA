@@ -1,0 +1,62 @@
+table {
+  border-collapse: collapse;
+  width: 50%;
+  min-height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.summaryLine{
+  border-top-width: 3px;
+  border-top-style: solid;
+  border-top-color: rgb(40, 43, 48);
+}
+.image-container {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+
+.imageColumn {
+  width: 75px;
+}
+
+.shoppingCart {
+  font-size: 15px;
+  border-style: solid;
+  padding: 10px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-width: 2px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 150px;
+  color: rgb(40, 43, 48);
+}
+.shoppingCart:hover {
+  border-color: #3a75fd;
+}
+
+.shoppingCartText{
+  margin: 0 0 0 10px;
+}
+
+.contentWrapper {
+  display: flex;
+}
+
+.menu {
+  flex-direction: column;
+}
+
+.content{
+  flex-direction: column;
+  width: 100%;
+}

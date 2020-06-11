@@ -8,7 +8,7 @@ import { Observable, Subject} from 'rxjs';
 export class CartService implements HttpInterceptor {
   private node = new Subject<number>();
 
-  shoppingCartItems$ = this.node.asObservable();
+  shoppingCartItemsCount$ = this.node.asObservable();
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
