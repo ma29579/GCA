@@ -12,7 +12,7 @@ import {ShippingService} from '../shared/shipping.service';
 export class CartComponent implements OnInit {
 
   products: Array<any>;
-  cartItem: Array<any>;
+  cartItem: Array<any> = [];
   shippingCost = 0;
   articleCost = 0;
 

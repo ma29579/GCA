@@ -1,6 +1,9 @@
-<h1>Warenkorb</h1>
+<h1 *ngIf="cartItem.length != 0">Warenkorb ({{cartItem.length}} Artikel)</h1>
+<h1 *ngIf="cartItem.length == 0">Warenkorb</h1>
+<p *ngIf="cartItem.length == 0">Es befinden sich keine Artikel im Warenkorb. Gehe zur Startseite und suche dir ein Artikel aus.</p>
 
-<div class="contentWrapper">
+<div class="contentWrapper" *ngIf="cartItem.length != 0">
+
   <div class="menu">
     <div class="shoppingCart" [routerLink]="['/']"><fa-icon [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
     <div class="shoppingCart"><fa-icon [icon]="faTrash"></fa-icon><p class="shoppingCartText">Warenkorb leeren</p></div>
@@ -41,6 +44,30 @@
       </tr>
       </tbody>
     </table>
+  </div>
+  <div class="contact">
+    <div class="contactContent">
+      <h1>Deine Informationen</h1>
+      <p>Gib die Versandinformationen ein, damit wir wissen, wohin wir deine Klamotten schicken müssen.</p>
+      <input placeholder="Vor- und Nachname"/>
+      <input placeholder="E-Mail Adresse"/>
+      <input placeholder="Straße und Nummer"/>
+      <div class="inputWrapper">
+        <input class="zip" placeholder="Postleitzahl"/>
+        <input class="city" placeholder="Stadt"/>
+      </div>
+
+
+      <h1 class="creditCardHeader">Kreditkarte</h1>
+      <p>Gib die Kreditkarteninformationen ein, um die Bestellung abzuschließen.</p>
+      <input placeholder="xxxx-xxxx-xxxx-xxxx"/>
+      <div class="inputWrapper">
+        <input class="city" placeholder="Monat"/>
+        <input class="creditCard"placeholder="Jahr"/>
+        <input class="creditCard"placeholder="CVV"/>
+      </div>
+      <div class="confirmOrder">Bestellung abschließen</div>
+    </div>
   </div>
 </div>
 
