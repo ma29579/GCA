@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50cda4b5-5bf4-44ce-8039-8bec2500fd94" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cart/src/main/resources/static/images/product_id_9.png" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1cg0uAbhE8SX6KDOKldHn7BdJR1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="de.gca1.onlineBoutique" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\catalog\src\main\resources\static\images" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="OnlineBoutiqueApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="onlineBoutique" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="de.gca1.onlineBoutique.OnlineBoutiqueApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50cda4b5-5bf4-44ce-8039-8bec2500fd94" name="Default Changelist" comment="" />
+      <created>1590935148507</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1590935148507</updated>
+      <workItem from="1590935153161" duration="995000" />
+      <workItem from="1591101263395" duration="22000" />
+      <workItem from="1591201475926" duration="3500000" />
+      <workItem from="1591206579020" duration="246000" />
+      <workItem from="1591271835343" duration="36000" />
+      <workItem from="1591346100277" duration="1704000" />
+      <workItem from="1591371204816" duration="73000" />
+      <workItem from="1591371380488" duration="136000" />
+      <workItem from="1591377355160" duration="3190000" />
+      <workItem from="1591432889417" duration="600000" />
+      <workItem from="1591623811867" duration="146000" />
+      <workItem from="1591687238937" duration="623000" />
+      <workItem from="1591858190806" duration="2562000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2472" y="181" key="#Project_Structure" timestamp="1591378752406">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2472" y="181" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591378752406" />
+    <state x="765" y="213" key="#com.intellij.ide.util.MemberChooser" timestamp="1591859790230">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="213" key="#com.intellij.ide.util.MemberChooser/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859790230" />
+    <state x="740" y="278" key="FileChooserDialogImpl" timestamp="1591371514789">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="278" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591371514789" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420997" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420995" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420995" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420995" />
+    <state width="1877" height="282" key="GridCell.Tab.1.bottom" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420997" />
+    <state width="1877" height="282" key="GridCell.Tab.1.center" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420997" />
+    <state width="1877" height="282" key="GridCell.Tab.1.left" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420997" />
+    <state width="1877" height="282" key="GridCell.Tab.1.right" timestamp="1591859281038">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1591859281038" />
+    <state width="1877" height="282" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1591381420997" />
+  </component>
+</project>
