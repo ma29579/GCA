@@ -139,7 +139,7 @@ public class CartController {
 
     @RequestMapping("/cart/empty/{userID}")
     @CrossOrigin(origins = "*")
-    public void emptyCartByUserID(UUID userID) {
+    public void emptyCartByUserID(@PathVariable("userID") UUID userID) {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");

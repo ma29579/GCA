@@ -5,8 +5,8 @@
 <div class="contentWrapper" *ngIf="cartItem.length != 0">
 
   <div class="menu">
-    <div class="shoppingCart" [routerLink]="['/']"><fa-icon [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
-    <div class="shoppingCart"><fa-icon [icon]="faTrash"></fa-icon><p class="shoppingCartText">Warenkorb leeren</p></div>
+    <div class="shoppingCart" [routerLink]="['/']"><fa-icon class="continueShoppingIcon" [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
+    <div class="shoppingCart" (click)="deleteCart()" ><fa-icon class="deleteCartIcon" [icon]="faTrash"></fa-icon><p class="shoppingCartText">Warenkorb leeren</p></div>
   </div>
   <div class="content">
     <table>
@@ -50,7 +50,7 @@
       <h1>Deine Informationen</h1>
       <p>Gib die Versandinformationen ein, damit wir wissen, wohin wir deine Klamotten schicken müssen.</p>
       <input placeholder="Vor- und Nachname"/>
-      <input placeholder="E-Mail Adresse"/>
+      <input [ngClass]="{'invalid' : !validEmail}" placeholder="E-Mail Adresse" (keyup)="checkEmail($event.target.value)"/>
       <input placeholder="Straße und Nummer"/>
       <div class="inputWrapper">
         <input class="zip" placeholder="Postleitzahl"/>
@@ -60,13 +60,12 @@
 
       <h1 class="creditCardHeader">Kreditkarte</h1>
       <p>Gib die Kreditkarteninformationen ein, um die Bestellung abzuschließen.</p>
-      <input placeholder="xxxx-xxxx-xxxx-xxxx"/>
+      <input [ngClass]="{'invalid' : !validCreditNumber}" (keyup)="checkCreditCard($event.target.value)" placeholder="xxxx-xxxx-xxxx-xxxx"/>
       <div class="inputWrapper">
-        <input class="city" placeholder="Monat"/>
-        <input class="creditCard"placeholder="Jahr"/>
-        <input class="creditCard"placeholder="CVV"/>
+        <input [ngClass]="{'invalid' : !validMonthYear}" class="city" placeholder="MM/YY" (keyup)="checkMonthYear($event.target.value)"/>
+        <input [ngClass]="{'invalid' : !validCCV}" class="creditCard" placeholder="CVV" (keyup)="checkCCV($event.target.value)"/>
       </div>
-      <div class="confirmOrder">Bestellung abschließen</div>
+      <div class="confirmOrder" (click)="checkout()">Bestellung abschließen</div>
     </div>
   </div>
 </div>
