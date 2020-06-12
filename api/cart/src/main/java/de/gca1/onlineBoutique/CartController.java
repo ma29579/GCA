@@ -25,7 +25,8 @@ import java.util.logging.Logger;
 @RestController
 public class CartController {
 
-    //private static final Logger log = (Logger) LoggerFactory.getLogger(CartController.class);
+    //private static final Logger log =
+    // (Logger) LoggerFactory.getLogger(CartController.class);
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
