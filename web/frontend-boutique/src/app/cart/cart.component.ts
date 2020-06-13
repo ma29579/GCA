@@ -4,6 +4,7 @@ import {CartService} from '../shared/cart.service';
 import {faShoppingCart, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {ShippingService} from '../shared/shipping.service';
 import { Router } from '@angular/router';
+import {CheckoutService} from "../shared/checkout.service";
 
 @Component({
   selector: 'app-cart',
@@ -16,7 +17,12 @@ export class CartComponent implements OnInit {
   cartItem: Array<any> = [];
   shippingCost = 0;
   articleCost = 0;
+  showMissingInformationHint = false;
 
+  validName = true;
+  validStreet = true;
+  validCity = true;
+  validZip = true;
   validEmail = true;
   validMonthYear = true;
   validCreditNumber = true;
@@ -29,11 +35,9 @@ export class CartComponent implements OnInit {
   // Checkoutitem:
   checkoutData = {
     userID: '',
-    firstName: '',
-    lastName: '',
+    firstLastName: '',
     shippingCost: 0,
     totalPrice: 0,
-    products: [],
     creditCardInformation: {
       number: '',
       monthAndYear: '',
@@ -45,18 +49,16 @@ export class CartComponent implements OnInit {
     email: ''
   };
 
-  constructor(private productService: ProductService, private cartService: CartService, private shippingService: ShippingService, private router: Router) { }
+  constructor(private productService: ProductService, private cartService: CartService, private shippingService: ShippingService, private router: Router, private checkoutService: CheckoutService) { }
 
   ngOnInit(): void {
     this.cartService.getCart().subscribe(data => {
       this.cartItem = data;
       data.forEach(x => this.articleCost += x.price );
 
-      console.log(this.articleCost);
       this.shippingService.getShippingCost(this.articleCost).subscribe((n) => {
           this.shippingCost = n;
       });
-      console.log(data);
     });
   }
 
@@ -64,9 +66,8 @@ export class CartComponent implements OnInit {
     const regex = '^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$';
     if (email.match(regex) == null) {
       this.validEmail = false;
-      this.checkoutData.email = ''
+      this.checkoutData.email = '';
     } else {
-      console.log("VALID");
       this.validEmail = true;
       this.checkoutData.email = email;
     }
@@ -81,7 +82,6 @@ export class CartComponent implements OnInit {
         this.validCreditNumber = false;
         this.checkoutData.creditCardInformation.number = '';
       } else {
-        console.log("VALID");
         this.validCreditNumber = true;
         this.checkoutData.creditCardInformation.number = card;
       }
@@ -111,6 +111,8 @@ export class CartComponent implements OnInit {
       this.validCCV = false;
       this.checkoutData.creditCardInformation.ccv = '';
     } else {
+      console.log(ccv);
+      this.validCCV = true;
       this.checkoutData.creditCardInformation.ccv = ccv;
     }
 
@@ -125,7 +127,58 @@ export class CartComponent implements OnInit {
     });
   }
 
-  checkout() {
+  updateName(name: string) {
+    this.checkoutData.firstLastName = name;
+    this.validName = true;
+  }
 
+  updateStreet(street: string) {
+    this.checkoutData.street = street;
+    this.validStreet = true;
+  }
+
+  updateZip(zip: string) {
+    this.checkoutData.zip = zip;
+    this.validZip = true;
+  }
+
+  updateCity(city: string) {
+    this.checkoutData.city = city;
+    this.validCity = true;
+  }
+
+  checkout() {
+    // Validate Data
+    this.validName = this.checkoutData.firstLastName !== undefined && this.checkoutData.firstLastName.length > 0;
+    this.validStreet = this.checkoutData.street !== undefined && this.checkoutData.street.length > 0;
+    this.validZip = this.checkoutData.zip !== undefined && this.checkoutData.zip.length > 0;
+    this.validCity = this.checkoutData.city !== undefined && this.checkoutData.city.length > 0;
+    this.validEmail = this.checkoutData.email !== undefined && this.checkoutData.email.length > 0;
+    this.validCreditNumber = this.validCreditNumber && this.checkoutData.creditCardInformation.number.length > 0;
+    this.validMonthYear = this.validMonthYear && this.checkoutData.creditCardInformation.monthAndYear.length > 0;
+    this.validCCV = this.validCCV && this.checkoutData.creditCardInformation.ccv.length > 0;
+
+    // Abort when parameters are invalid
+    if (!this.validName ||
+      !this.validStreet ||
+      !this.validZip ||
+      !this.validCity ||
+      !this.validEmail ||
+      !this.validCreditNumber ||
+      !this.validMonthYear ||
+      !this.validCCV) {
+        this.showMissingInformationHint = true;
+        return;
+    }
+    // Fill missing information
+    this.checkoutData.userID = localStorage.getItem('userId');
+    this.checkoutData.totalPrice = this.articleCost;
+    this.checkoutData.shippingCost = this.shippingCost;
+
+    // Execute checkout
+    console.log(this.checkoutData);
+    this.checkoutService.postCart(this.checkoutData).subscribe(x => {
+      console.log(x);
+    });
   }
 }

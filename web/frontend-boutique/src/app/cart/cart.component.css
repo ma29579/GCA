@@ -136,4 +136,8 @@ th, td {
 }
 [hidden] { display: none !important;}
 
+.missingInformationHint {
+  color:red;
+}
+
 

@@ -49,14 +49,14 @@
     <div class="contactContent">
       <h1>Deine Informationen</h1>
       <p>Gib die Versandinformationen ein, damit wir wissen, wohin wir deine Klamotten schicken müssen.</p>
-      <input placeholder="Vor- und Nachname"/>
+      <p class="missingInformationHint" *ngIf="showMissingInformationHint">Bitte fülle die fehlenden Informationen aus.</p>
+      <input placeholder="Vor- und Nachname" [ngClass]="{'invalid' : !validName}" (keyup)="updateName($event.target.value)"/>
       <input [ngClass]="{'invalid' : !validEmail}" placeholder="E-Mail Adresse" (keyup)="checkEmail($event.target.value)"/>
-      <input placeholder="Straße und Nummer"/>
+      <input placeholder="Straße und Nummer" [ngClass]="{'invalid' : !validStreet}" (keyup)="updateStreet($event.target.value)"/>
       <div class="inputWrapper">
-        <input class="zip" placeholder="Postleitzahl"/>
-        <input class="city" placeholder="Stadt"/>
+        <input class="zip" placeholder="Postleitzahl" [ngClass]="{'invalid' : !validZip}"(keyup)="updateZip($event.target.value)"/>
+        <input class="city" placeholder="Stadt" [ngClass]="{'invalid' : !validCity}" (keyup)="updateCity($event.target.value)"/>
       </div>
-
 
       <h1 class="creditCardHeader">Kreditkarte</h1>
       <p>Gib die Kreditkarteninformationen ein, um die Bestellung abzuschließen.</p>

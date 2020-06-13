@@ -20,7 +20,9 @@ export class ProductsComponent implements OnInit {
     this.productService.getAll().subscribe(data => {
       let list = data;
       this.cartService.getCart().subscribe((cartItems) => {
-          cartItems.forEach(x => list = list.filter(y => y.id !== x.id));
+          if (cartItems !== null) {
+            cartItems.forEach(x => list = list.filter(y => y.id !== x.id));
+          }
           this.products = list;
       });
     });
