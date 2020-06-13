@@ -22,24 +22,6 @@ export class CartService implements HttpInterceptor {
     return next.handle(request);
   }
   constructor(private http: HttpClient) {
-    const checkout = {
-      userID: '',
-      firstName: '',
-      lastName: '',
-      shippingCost: 0,
-      totalPrice: 0,
-      products: [0, 1, 2, 3],
-      creditCardInformation: {
-        number: '',
-        month: '',
-        year: '',
-        ccv: ''
-      },
-      street: '',
-      zip: '',
-      city: '',
-      email: ''
-    };
     this.node.next(0);
   }
 

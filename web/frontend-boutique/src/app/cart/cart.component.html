@@ -1,8 +1,8 @@
-<h1 *ngIf="cartItem.length != 0">Warenkorb ({{cartItem.length}} Artikel)</h1>
-<h1 *ngIf="cartItem.length == 0">Warenkorb</h1>
-<p *ngIf="cartItem.length == 0">Es befinden sich keine Artikel im Warenkorb. Gehe zur Startseite und suche dir ein Artikel aus.</p>
+<h1 *ngIf="cartItem && cartItem.length != 0">Warenkorb ({{cartItem.length}} Artikel)</h1>
+<h1 *ngIf="cartItem === null || cartItem.length == 0">Warenkorb</h1>
+<p *ngIf="cartItem === null || cartItem.length == 0">Es befinden sich keine Artikel im Warenkorb. Gehe zur Startseite und suche dir ein Artikel aus.</p>
 
-<div class="contentWrapper" *ngIf="cartItem.length != 0">
+<div class="contentWrapper" *ngIf="cartItem && cartItem.length != 0">
 
   <div class="menu">
     <div class="shoppingCart" [routerLink]="['/']"><fa-icon class="continueShoppingIcon" [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>

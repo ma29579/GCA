@@ -53,6 +53,7 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartService.getCart().subscribe(data => {
+      if(data === null) data = [];
       this.cartItem = data;
       data.forEach(x => this.articleCost += x.price );
 
@@ -120,7 +121,6 @@ export class CartComponent implements OnInit {
 
   deleteCart() {
     this.cartService.deleteCart().subscribe(() => {
-      console.log("DELETE CART");
       this.cartService.setCartAmount(0);
       this.cartItem = [];
       this.router.navigate(['/']);
