@@ -43,7 +43,7 @@ public class CartController {
     }
 
     @RequestMapping("/cart/{userID}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
 
         ArrayList<Integer> itemsByID = new ArrayList<>();

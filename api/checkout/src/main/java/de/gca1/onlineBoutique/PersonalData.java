@@ -2,34 +2,26 @@ package de.gca1.onlineBoutique;
 
 public class PersonalData {
 
-    private String firstName;
     private String name;
     private String email;
     private String street;
     private String city;
+    private String zip;
 
-    public PersonalData(String firstName, String name, String email, String street, String city) {
-        this.firstName = firstName;
+    public PersonalData(String name, String email, String street, String city, String zip) {
         this.name = name;
         this.email = email;
         this.street = street;
         this.city = city;
+        this.zip = zip;
     }
 
     public PersonalData() {
-        this.firstName = "";
         this.name = "";
         this.email = "";
         this.street = "";
         this.city = "";
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.zip = "";
     }
 
     public String getName() {
@@ -63,4 +55,8 @@ public class PersonalData {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public void setZip(String zip){this.zip = zip;}
+
+    public String getZip(){return this.zip;}
 }
