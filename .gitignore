@@ -2,3 +2,5 @@
 api/checkout/.idea/
 
 api/shipping/.idea/
+
+api/shipping/target/
