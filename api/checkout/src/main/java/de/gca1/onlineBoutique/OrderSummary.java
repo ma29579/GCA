@@ -9,8 +9,12 @@ public class OrderSummary {
     private PersonalData personalData;
     private PaymentData paymentData;
     private String trackingNumber;
+    private Double totalCosts;
+    private Double shippingCosts;
 
     public OrderSummary(){
+        this.totalCosts = null;
+        this.shippingCosts = null;
         this.trackingNumber = null;
         this.products = new ArrayList<>();
         this.paymentData = new PaymentData();
@@ -43,5 +47,21 @@ public class OrderSummary {
 
     public String getTrackingNumber() {
         return trackingNumber;
+    }
+
+    public Double getTotalCosts() {
+        return totalCosts;
+    }
+
+    public void setTotalCosts(Double totalCosts) {
+        this.totalCosts = totalCosts;
+    }
+
+    public Double getShippingCosts() {
+        return shippingCosts;
+    }
+
+    public void setShippingCosts(Double shippingCosts) {
+        this.shippingCosts = shippingCosts;
     }
 }

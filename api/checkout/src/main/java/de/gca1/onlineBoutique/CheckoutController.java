@@ -133,7 +133,8 @@ public class CheckoutController {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
 
-
+            orderSummary.setShippingCosts(validatedShippingCosts);
+            orderSummary.setTotalCosts(calculatedSum);
             orderSummary.setProducts(givenProducts);
             orderSummary.setPaymentData(givenPaymentData);
             orderSummary.setPersonalData(givenPersonalData);
@@ -146,8 +147,7 @@ public class CheckoutController {
             e.printStackTrace();
         }
 
-        return null;
-        //return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
 }
