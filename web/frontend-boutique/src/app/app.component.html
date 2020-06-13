@@ -3,7 +3,7 @@
   <div class="shoppingCart" [routerLink]="['/cart']"><fa-icon [icon]="faShoppingCart"></fa-icon><div class="numberIcon">{{cartAmount}}</div><p class="shoppingCartText">Warenkorb</p></div>
 </div>
 <div class="banner"></div>
-<div class="router-container">
+<div class="router-container" *ngIf="hasUserId" >
   <router-outlet></router-outlet>
 </div>
 

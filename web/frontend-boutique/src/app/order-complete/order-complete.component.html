@@ -31,7 +31,7 @@
       <p>E-Mail: <b>{{orderSummary.personalData.email}}</b></p>
       <h2>Kreditkarte</h2>
       <p>Kreditkartennummer: <b>{{orderSummary.paymentData.creditCardNumber}}</b></p>
-      <div class="shoppingCart" [routerLink]="['/']"><fa-icon class="continueShoppingIcon" [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
+      <div class="shoppingCart" (click)="goHome()"><fa-icon class="continueShoppingIcon" [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
 
     </div>
 

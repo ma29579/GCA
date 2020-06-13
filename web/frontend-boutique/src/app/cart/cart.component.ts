@@ -4,7 +4,7 @@ import {CartService} from '../shared/cart.service';
 import {faShoppingCart, faTrash} from '@fortawesome/free-solid-svg-icons';
 import {ShippingService} from '../shared/shipping.service';
 import { Router } from '@angular/router';
-import {CheckoutService} from "../shared/checkout.service";
+import {CheckoutService} from '../shared/checkout.service';
 
 @Component({
   selector: 'app-cart',
@@ -91,7 +91,6 @@ export class CartComponent implements OnInit {
       }
   }
   checkMonthYear(monthYear: string) {
-    console.log(monthYear);
     const regex = '^((0[1-9])|(1[0-2]))\\/(\\d{2})$';
     if (monthYear.match(regex) == null) {
       this.validMonthYear = false;
@@ -105,13 +104,11 @@ export class CartComponent implements OnInit {
     }
   }
   checkCCV(ccv: string) {
-    console.log(ccv);
     const regex = '^([0-9]{3,4})$';
     if (ccv.match(regex) == null) {
       this.validCCV = false;
       this.checkoutData.creditCardInformation.ccv = '';
     } else {
-      console.log(ccv);
       this.validCCV = true;
       this.checkoutData.creditCardInformation.ccv = ccv;
     }
@@ -124,6 +121,7 @@ export class CartComponent implements OnInit {
   deleteCart() {
     this.cartService.deleteCart().subscribe(() => {
       console.log("DELETE CART");
+      this.cartService.setCartAmount(0);
       this.cartItem = [];
       this.router.navigate(['/']);
     });
@@ -178,7 +176,6 @@ export class CartComponent implements OnInit {
     this.checkoutData.shippingCost = this.shippingCost;
 
     // Execute checkout
-    console.log(this.checkoutData);
     this.checkoutService.postCart(this.checkoutData).subscribe(x => {
         this.checkoutService.setCheckoutSummary(x);
         this.cartService.setCartAmount(0);

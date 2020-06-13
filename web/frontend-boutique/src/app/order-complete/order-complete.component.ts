@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CheckoutService} from '../shared/checkout.service';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-order-complete',
@@ -17,7 +17,10 @@ export class OrderCompleteComponent implements OnInit {
   ngOnInit(): void {
     this.orderSummary = this.checkoutServie.getCheckoutSummary();
     if (this.orderSummary === null) {
-      this.router.navigate(['/']);
+      window.open('http://localhost:4200');
     }
+  }
+  goHome() {
+    window.open('http://localhost:4200', '_self');
   }
 }
