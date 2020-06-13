@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {ProductsComponent} from './products/products.component';
 import {CartComponent} from './cart/cart.component';
 import {EventEmitter} from "events";
+import {OrderCompleteComponent} from './order-complete/order-complete.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,10 @@ const routes: Routes = [
   {
     path: 'cart',
     component: CartComponent,
-
+  },
+  {
+    path: 'orderComplete',
+    component: OrderCompleteComponent
   }
 ];
 

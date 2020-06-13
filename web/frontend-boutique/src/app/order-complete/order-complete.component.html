@@ -1,0 +1,39 @@
+<h1>Bestellung abgeschlossen</h1>
+<div class="wrapper">
+  <div class="articleView">
+    <h2>Übersicht</h2>
+    <table>
+      <thead>
+      <tr>
+        <th></th>
+        <th>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="product-showcase" *ngFor="let product of orderSummary.products">
+        <td class="imageColumn"><div class="image-container" [ngStyle]="{'background-image':'url(' + product.imageUrl + ')'}"></div></td>
+        <td><h3> {{product.name}}</h3><p>{{product.description}}</p></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="informationView">
+    <div class="informationViewContent">
+      <h2>Details</h2>
+      <p>Artikelkosten: <b>{{orderSummary.totalCosts}} €</b></p>
+      <p>Versandkosten: <b>{{orderSummary.shippingCosts}} €</b></p>
+      <p>Tracking-Nummer: <b>{{orderSummary.trackingNumber}}</b></p>
+      <h2>Anschrift</h2>
+      <p>Name: <b>{{orderSummary.personalData.name}}</b></p>
+      <p>Straße: <b>{{orderSummary.personalData.street}}</b></p>
+      <p>Ort: <b>{{orderSummary.personalData.zip}} {{orderSummary.personalData.city}}</b></p>
+      <p>E-Mail: <b>{{orderSummary.personalData.email}}</b></p>
+      <h2>Kreditkarte</h2>
+      <p>Kreditkartennummer: <b>{{orderSummary.paymentData.creditCardNumber}}</b></p>
+      <div class="shoppingCart" [routerLink]="['/']"><fa-icon class="continueShoppingIcon" [icon]="faShoppingCart"></fa-icon><p class="shoppingCartText">Weiter shoppen</p></div>
+
+    </div>
+
+  </div>
+</div>

@@ -7,12 +7,14 @@ import { ProductsComponent } from './products/products.component';
 import {HttpClientModule} from '@angular/common/http';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { CartComponent } from './cart/cart.component';
+import { OrderCompleteComponent } from './order-complete/order-complete.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     CartComponent,
+    OrderCompleteComponent,
   ],
   imports: [
     BrowserModule,

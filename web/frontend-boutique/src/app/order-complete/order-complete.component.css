@@ -1,0 +1,67 @@
+.wrapper {
+  display:flex;
+}
+
+.articleView{
+  width: 25%;
+  min-width: 300px;
+  flex-direction: column;
+}
+
+.informationView {
+  width: 50%;
+  margin-left: 50px;
+  justify-content: center;
+  display: flex;
+}
+
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+  min-height: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  min-width: 50px;
+}
+
+.image-container {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+}
+
+.shoppingCart {
+  font-size: 15px;
+  border-style: solid;
+  padding: 10px;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-width: 2px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 150px;
+  color: rgb(40, 43, 48);
+}
+.shoppingCart:hover {
+  border-color: #3a75fd;
+
+}
+.shoppingCart:hover .deleteCartIcon {
+  color: darkred;
+}
+.shoppingCart:hover .continueShoppingIcon {
+  color: darkgreen;
+}
+
+.shoppingCartText{
+  margin: 0 0 0 10px;
+}

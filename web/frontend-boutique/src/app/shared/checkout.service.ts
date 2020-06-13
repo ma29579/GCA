@@ -5,19 +5,18 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class CheckoutService implements HttpInterceptor {
+export class CheckoutService {
+  checkoutSummary = null;
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    request = request.clone({
-      withCredentials: true
-    });
-
-    return next.handle(request);
-  }
   constructor(private http: HttpClient) {
   }
 
+  setCheckoutSummary(item: any) {
+    this.checkoutSummary = item;
+  }
+  getCheckoutSummary() {
+    return this.checkoutSummary;
+  }
   postCart(cart: any): Observable<any> {
     return this.http.post('//localhost:8083/checkout/validate', cart);
   }

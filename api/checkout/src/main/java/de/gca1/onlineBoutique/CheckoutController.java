@@ -87,7 +87,6 @@ public class CheckoutController {
 
             }
 
-
             //Validieren
             //Bestellsumme validieren
             double calculatedSum = 0;
@@ -139,14 +138,13 @@ public class CheckoutController {
             orderSummary.setPaymentData(givenPaymentData);
             orderSummary.setPersonalData(givenPersonalData);
 
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(orderSummary);
+            return ResponseEntity.status(HttpStatus.OK).body(orderSummary);
 
         } catch (IOException e) {
             e.printStackTrace();
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 

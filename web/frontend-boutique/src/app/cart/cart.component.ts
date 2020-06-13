@@ -123,6 +123,8 @@ export class CartComponent implements OnInit {
 
   deleteCart() {
     this.cartService.deleteCart().subscribe(() => {
+      console.log("DELETE CART");
+      this.cartItem = [];
       this.router.navigate(['/']);
     });
   }
@@ -178,7 +180,13 @@ export class CartComponent implements OnInit {
     // Execute checkout
     console.log(this.checkoutData);
     this.checkoutService.postCart(this.checkoutData).subscribe(x => {
-      console.log(x);
+        this.checkoutService.setCheckoutSummary(x);
+        this.cartService.setCartAmount(0);
+        this.cartItem = [];
+
+        localStorage.removeItem('userId');
+        console.log(localStorage.getItem('userId'));
+        this.router.navigate(['/orderComplete']);
     });
   }
 }
