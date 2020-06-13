@@ -20,6 +20,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.UUID;
 
 @RestController
 public class CheckoutController {
@@ -52,7 +53,7 @@ public class CheckoutController {
 
             givenUserID = input.get("userID").toString();
             givenShippingCosts = Double.valueOf(input.get("shippingCost").toString());
-            givenTotalPrice = Double.valueOf(input.get("shippingCost").toString());
+            givenTotalPrice = Double.valueOf(input.get("totalPrice").toString());
 
             givenPersonalData.setEmail(input.get("email").toString());
             givenPersonalData.setCity(input.get("city").toString());
@@ -95,7 +96,7 @@ public class CheckoutController {
             }
 
             if(calculatedSum != givenTotalPrice)
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+               return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
 
             //Versandkosten validieren
             double validatedShippingCosts = 0;
@@ -109,7 +110,7 @@ public class CheckoutController {
                 Scanner inputScanner = new Scanner(inputStream);
 
                 if(inputScanner.hasNextLine())
-                    validatedShippingCosts = Double.valueOf(inputScanner.nextDouble());
+                    validatedShippingCosts = Double.valueOf(inputScanner.nextLine());
 
             } else {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
@@ -126,7 +127,7 @@ public class CheckoutController {
 
                 JSONObject orderInformation = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));
 
-                orderSummary.setTrackingNumber(orderInformation.get("trackingNumber").toString());
+                orderSummary.setTrackingNumber((orderInformation.get("trackingNumber").toString()));
 
             } else {
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
@@ -137,7 +138,7 @@ public class CheckoutController {
             orderSummary.setPaymentData(givenPaymentData);
             orderSummary.setPersonalData(givenPersonalData);
 
-            return ResponseEntity.status(HttpStatus.OK).body(orderSummary);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(orderSummary);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -145,7 +146,8 @@ public class CheckoutController {
             e.printStackTrace();
         }
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        return null;
+        //return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
 }

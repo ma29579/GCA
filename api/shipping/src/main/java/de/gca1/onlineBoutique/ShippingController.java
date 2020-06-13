@@ -29,17 +29,17 @@ public class ShippingController {
 
     @GetMapping("/shipping/trackingnumber/{userID}")
     @CrossOrigin(origins = "*")
-    public ResponseEntity<OrderInformation> calculateShippingCosts(@PathVariable("userID") UUID userID) {
+    public ResponseEntity<OrderInformation> generateTrackingnumber(@PathVariable("userID") UUID userID) {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/shipping", "gca", "gca");
-            databaseHelper.addProduct(userID);
+            OrderInformation orderInformation = databaseHelper.addTrackingNumber(userID);
+            return ResponseEntity.status(HttpStatus.OK).body(orderInformation);
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-
-        return null;
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
     }
 
 }

@@ -1,6 +1,7 @@
 package de.gca1.onlineBoutique;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class OrderSummary {
 
@@ -10,7 +11,7 @@ public class OrderSummary {
     private String trackingNumber;
 
     public OrderSummary(){
-        trackingNumber = "";
+        this.trackingNumber = null;
         this.products = new ArrayList<>();
         this.paymentData = new PaymentData();
         this.personalData = new PersonalData();
@@ -27,4 +28,20 @@ public class OrderSummary {
     }
 
     public void setTrackingNumber(String trackingNumber) {this.trackingNumber = trackingNumber;}
+
+    public ArrayList<Product> getProducts() {
+        return products;
+    }
+
+    public PersonalData getPersonalData() {
+        return personalData;
+    }
+
+    public PaymentData getPaymentData() {
+        return paymentData;
+    }
+
+    public String getTrackingNumber() {
+        return trackingNumber;
+    }
 }
