@@ -147,8 +147,7 @@ public class CheckoutController {
             e.printStackTrace();
         }
 
-        return null;
-        //return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
 }
