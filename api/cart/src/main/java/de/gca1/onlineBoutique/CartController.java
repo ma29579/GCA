@@ -53,7 +53,6 @@ public class CartController {
         return new ArrayList<Product>();
     }
 
-
     @Retryable(
             value = {SocketTimeoutException.class},
             maxAttempts = 2,

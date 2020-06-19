@@ -1,10 +1,14 @@
 package de.gca1.onlineBoutique;
 
 import netscape.javascript.JSObject;
+import org.apache.coyote.Response;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Recover;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +22,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -30,9 +37,19 @@ public class CheckoutController {
     private RestTemplate restTemplate;
 
 
+    @Recover
+    public ResponseEntity<OrderSummary> getProducts() {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+    }
+
+    @Retryable(
+            value = {Exception.class},
+            maxAttempts = 2,
+            backoff = @Backoff(delay = 5000)
+    )
     @RequestMapping("/checkout/validate")
     @CrossOrigin(origins = "*")
-    public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) {
+    public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) throws SocketTimeoutException {
 
         OrderSummary orderSummary = new OrderSummary();
 
@@ -71,26 +88,29 @@ public class CheckoutController {
             givenPaymentData.setExpireDate(creditCardInformation.get("monthAndYear").toString());
 
             URL cartAPI = new URL("http://localhost:8081/cart/" + givenUserID);
-            HttpURLConnection connection = (HttpURLConnection) cartAPI.openConnection();
+            HttpURLConnection connection; // = (HttpURLConnection) cartAPI.openConnection();
 
-            if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
+            Product[] getProducts = this.restTemplate.getForObject(cartAPI.toString(), Product[].class);
+            givenProducts = new ArrayList<Product>(Arrays.asList(getProducts));
 
-                JSONArray productList = (JSONArray) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));
-
-                for(int i = 0; i < productList.size();i++){
-
-                    JSONObject product = (JSONObject) productList.get(i);
-
-                    Integer id = Integer.valueOf(product.get("id").toString());
-                    String name = product.get("name").toString();
-                    Double price = Double.valueOf(product.get("price").toString());
-                    String description = product.get("description").toString();
-                    String imageUrl = product.get("imageUrl").toString();
-
-                    givenProducts.add(new Product(id,name,price,description,imageUrl));
-                }
-
-            }
+//            if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
+//
+//                JSONArray productList = (JSONArray) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));
+//
+//                for(int i = 0; i < productList.size();i++){
+//
+//                    JSONObject product = (JSONObject) productList.get(i);
+//
+//                    Integer id = Integer.valueOf(product.get("id").toString());
+//                    String name = product.get("name").toString();
+//                    Double price = Double.valueOf(product.get("price").toString());
+//                    String description = product.get("description").toString();
+//                    String imageUrl = product.get("imageUrl").toString();
+//
+//                    givenProducts.add(new Product(id,name,price,description,imageUrl));
+//                }
+//
+//            }
            //Validieren
             //Bestellsumme validieren
             double calculatedSum = 0;
@@ -146,8 +166,8 @@ public class CheckoutController {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (ParseException e) {
-            e.printStackTrace();
+        } catch(ConnectException e) {
+            throw new SocketTimeoutException();
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
