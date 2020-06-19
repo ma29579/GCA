@@ -5,9 +5,14 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.retry.annotation.Backoff;
+import org.springframework.retry.annotation.Recover;
+import org.springframework.retry.annotation.Retryable;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,6 +20,7 @@ import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -25,8 +31,8 @@ import java.util.logging.Logger;
 @RestController
 public class CartController {
 
-    //private static final Logger log =
-    // (Logger) LoggerFactory.getLogger(CartController.class);
+    @Autowired
+    private RestTemplate restTemplate;
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -42,6 +48,17 @@ public class CartController {
         }
     }
 
+    @Recover
+    public ArrayList<Product> getProducts() {
+        return new ArrayList<Product>();
+    }
+
+
+    @Retryable(
+            value = {SocketTimeoutException.class},
+            maxAttempts = 2,
+            backoff = @Backoff(delay = 5000)
+    )
     @RequestMapping("/cart/{userID}")
     @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
@@ -67,39 +84,17 @@ public class CartController {
             for (Integer i : itemsByID) {
                 try {
                     url = new URL("http://localhost:8080/catalog/" + i.toString());
-                    connection = (HttpURLConnection) url.openConnection();
-
-                    if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                        JSONObject product = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));
-
-                        int id = ((Long) product.get("id")).intValue();
-                        String name = (String) product.get("name");
-                        double price = (Double) product.get("price");
-                        String description = (String) product.get("description");
-                        String imageUrl = (String) product.get("imageUrl");
-
-                        cartProducts.add(new Product(id, name, price, description, imageUrl));
-
-                    }
+                    Product cart = this.restTemplate.getForObject(url.toString(), Product.class);
+                    cartProducts.add(cart);
 
                 } catch (MalformedURLException e) {
                     //LOGGEN
                     e.printStackTrace();
-                } catch (IOException e) {
-                    //LOGGEN
-                    e.printStackTrace();
-                } catch (ParseException e) {
-                    //LOGGEN
-                    e.printStackTrace();
                 }
             }
-
             return cartProducts;
-
         }
-
         return null;
-
     }
 
     @RequestMapping("/cart/itemNumber/{userID}")
@@ -117,7 +112,6 @@ public class CartController {
         }
 
     }
-
 
     @RequestMapping("/cart/init")
     @CrossOrigin(origins = "*")
@@ -151,7 +145,4 @@ public class CartController {
             e.printStackTrace();
         }
     }
-
-
-
 }

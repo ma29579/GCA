@@ -2,6 +2,7 @@ package de.gca1.onlineBoutique;
 
 import netscape.javascript.JSObject;
 import org.hibernate.criterion.Order;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.*;
+import org.springframework.web.client.RestTemplate;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.BufferedReader;
@@ -24,6 +26,9 @@ import java.util.UUID;
 
 @RestController
 public class CheckoutController {
+    @Autowired
+    private RestTemplate restTemplate;
+
 
     @RequestMapping("/checkout/validate")
     @CrossOrigin(origins = "*")
@@ -86,8 +91,7 @@ public class CheckoutController {
                 }
 
             }
-
-            //Validieren
+           //Validieren
             //Bestellsumme validieren
             double calculatedSum = 0;
             for (Product p : givenProducts){
