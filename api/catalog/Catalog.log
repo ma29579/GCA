@@ -594,3 +594,14 @@ Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No q
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
+2020-06-19 14:20:04 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 13868 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\catalog\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\catalog)
+2020-06-19 14:20:04 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-19 14:20:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-06-19 14:20:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-19 14:20:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-19 14:20:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-19 14:20:06 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2165 ms
+2020-06-19 14:20:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dd74143, org.springframework.security.web.context.SecurityContextPersistenceFilter@4462efe1, org.springframework.security.web.header.HeaderWriterFilter@16a35bd, org.springframework.security.web.authentication.logout.LogoutFilter@1e236278, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b0b7e5a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2db4ad1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6aa3bfc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@526a9908, org.springframework.security.web.session.SessionManagementFilter@54755dd9, org.springframework.security.web.access.ExceptionTranslationFilter@36aa52d2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e3572e8]
+2020-06-19 14:20:07 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 14:20:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-19 14:20:07 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.872 seconds (JVM running for 6.331)

@@ -32,7 +32,7 @@ public class CartController {
     private Environment env;
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Boolean> addProduct(@PathVariable("productID") int productID, @PathVariable("userID") UUID userID) {
 
         try {
@@ -112,7 +112,7 @@ public class CartController {
     }
 
     @RequestMapping("/cart/itemNumber/{userID}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public int getItemNumber(@PathVariable("userID") UUID userID) {
 
         try {
