@@ -1,7 +1,8 @@
 package de.gca1.onlineBoutique;
 
-import netscape.javascript.JSObject;
-import org.hibernate.criterion.Order;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,14 +17,17 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.UUID;
+
 
 @RestController
 public class CheckoutController {
+
+    private static final Logger logger = LoggerFactory.getLogger(CheckoutController.class);
 
     @RequestMapping("/checkout/validate")
     @CrossOrigin(origins = "*")
@@ -65,6 +69,8 @@ public class CheckoutController {
             givenPaymentData.setCreditCardNumber(creditCardInformation.get("number").toString());
             givenPaymentData.setExpireDate(creditCardInformation.get("monthAndYear").toString());
 
+            logger.info("Aufruf durch " + givenUserID);
+
             URL cartAPI = new URL("http://localhost:8081/cart/" + givenUserID);
             HttpURLConnection connection = (HttpURLConnection) cartAPI.openConnection();
 
@@ -85,6 +91,9 @@ public class CheckoutController {
                     givenProducts.add(new Product(id,name,price,description,imageUrl));
                 }
 
+            } else {
+                logger.error("Aufruf durch " + givenUserID  + " : Cart-API lieferte keine Daten!", connection);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
 
             //Validieren
@@ -94,8 +103,10 @@ public class CheckoutController {
                 calculatedSum+= p.getPrice();
             }
 
-            if(calculatedSum != givenTotalPrice)
-               return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            if(calculatedSum != givenTotalPrice) {
+                logger.error("Aufruf durch " + givenUserID  + " : Übermittelter Preis stimmt nicht mit dem gespeicherten Preis überein!", calculatedSum, givenTotalPrice);
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
 
             //Versandkosten validieren
             double validatedShippingCosts = 0;
@@ -112,11 +123,14 @@ public class CheckoutController {
                     validatedShippingCosts = Double.valueOf(inputScanner.nextLine());
 
             } else {
+                logger.error("Aufruf durch " + givenUserID  + " : Shipping-API lieferte keine Daten!", connection);
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
 
-            if(validatedShippingCosts != givenShippingCosts)
+            if(validatedShippingCosts != givenShippingCosts) {
+                logger.error("Aufruf durch " + givenUserID  + " : Übermittelte Versandkosten stimmt nicht mit dem gespeicherten Preis überein!", validatedShippingCosts, givenShippingCosts);
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            }
 
             //Trackingnumber generieren
             URL shippingTrackingNumber = new URL("http://localhost:8082/shipping/trackingnumber/" + givenUserID);
@@ -129,6 +143,7 @@ public class CheckoutController {
                 orderSummary.setTrackingNumber((orderInformation.get("trackingNumber").toString()));
 
             } else {
+                logger.error("Aufruf durch " + givenUserID  + " : Shipping-API konnte keine Trackingnumber generieren!", connection);
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
             }
 
@@ -138,12 +153,15 @@ public class CheckoutController {
             orderSummary.setPaymentData(givenPaymentData);
             orderSummary.setPersonalData(givenPersonalData);
 
+            logger.info("Validierung erfolgreich!", orderSummary);
             return ResponseEntity.status(HttpStatus.OK).body(orderSummary);
 
+        } catch (ConnectException e){
+            logger.error("Verbindungsaufbau fehlgeschlagen!", e);
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Response-Body konnte nicht ausgelesen werden!",e);
         } catch (ParseException e) {
-            e.printStackTrace();
+            logger.error("JSON konnte nicht geparst werden!",e);
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }

@@ -4,6 +4,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,13 +21,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.UUID;
-import java.util.logging.Logger;
 
 @RestController
 public class CartController {
 
-    //private static final Logger log =
-    // (Logger) LoggerFactory.getLogger(CartController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CartController.class);
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -34,10 +33,11 @@ public class CartController {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
-            //LOGGEN
             databaseHelper.addProduct(userID, productID);
+            logger.info("Erfolgreiches Hinzufügen eines Produkts in den Warenkorb eines Benutzers!",userID,productID);
             return ResponseEntity.status(HttpStatus.OK).body(true);
         } catch (SQLException e) {
+            logger.error("Fehler bei der Datenbankverbindung!", e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
         }
     }
@@ -54,7 +54,7 @@ public class CartController {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             itemsByID = databaseHelper.getAllEntries(userID);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Fehler bei der Datenbankverbindung!", e);
         }
 
         if (!itemsByID.isEmpty()) {
@@ -83,14 +83,13 @@ public class CartController {
                     }
 
                 } catch (MalformedURLException e) {
-                    //LOGGEN
+                    logger.error("Es wurde eine fehlerhafte URL übermittelt!",e);
                     e.printStackTrace();
                 } catch (IOException e) {
-                    //LOGGEN
+                    logger.error("Der Inhalt des Response konnte nicht ausgelesen werden!",e);
                     e.printStackTrace();
                 } catch (ParseException e) {
-                    //LOGGEN
-                    e.printStackTrace();
+                    logger.error("Das Parsen der JSON-Nachricht im Response-Body schlug fehl!",e);
                 }
             }
 
@@ -108,11 +107,11 @@ public class CartController {
 
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
-            //LOGGEN
             Integer totalItemNumberByUserID = databaseHelper.getEntryNumberByUserID(userID);
+            logger.info("Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer " + userID + " ermittelt werden", totalItemNumberByUserID);
             return totalItemNumberByUserID;
         } catch (SQLException e) {
-            //LOGGEN
+            logger.error("Fehler bei der Datenbankverbindung!", e);
             return 0;
         }
 
@@ -127,12 +126,11 @@ public class CartController {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             User user = databaseHelper.addUserID();
 
-
+            logger.info("Es konnte eine ID für den anfragenden Nutzer erstellt werden!", user);
             return ResponseEntity.status(HttpStatus.OK).body(user);
 
         } catch (SQLException e) {
-            //LOGGEN
-            e.printStackTrace();
+            logger.error("Fehler bei der Datenbankverbindung!", e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
         }
     }
@@ -145,10 +143,9 @@ public class CartController {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
             User user = databaseHelper.addUserID();
             databaseHelper.deleteAllCartEntriesByUserID(userID);
-
+            logger.info("Erfolgreiches Entfernen der Warenkorbeinträge für den Benutzer " + userID);
         } catch (SQLException e) {
-            //LOGGEN
-            e.printStackTrace();
+            logger.error("Fehler bei der Datenbankverbindung!", e);
         }
     }
 

@@ -5,6 +5,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 @RestController
 public class CatalogController {
 
-    private JSONParser jsonParser;
+    private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
     private ArrayList<Product> productList;
 
     @GetMapping("/catalog")
@@ -45,7 +47,7 @@ public class CatalogController {
         try {
             StreamUtils.copy(imgFile.getInputStream(),response.getOutputStream());
         } catch (IOException e) {
-            e.printStackTrace();
+            logger.error("Abruf der angeforderten Datei nicht möglich!", e, id);
         }
 
     }
@@ -53,7 +55,11 @@ public class CatalogController {
     @RequestMapping("/catalog/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Object> getProductById(@PathVariable("id") int id) {
-        if(id >= productList.size())  return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        if(id >= productList.size()) {
+            logger.error("Eingabe einer ungültigen Produkt-ID", id);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
+        logger.info("Erfoglreicher Abruf einer Produkt-ID", id);
         return ResponseEntity.status(HttpStatus.OK).body(productList.get(id));
     }
 
@@ -77,7 +83,7 @@ public class CatalogController {
             }
             return true;
         } catch (IOException | ParseException e) {
-            e.printStackTrace();
+            logger.error("Auslesen der Datei nicht möglich!", e);
             return false;
         }
 

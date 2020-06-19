@@ -1,0 +1,10 @@
+2020-06-19 12:17:01 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 10472 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\catalog\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\catalog)
+2020-06-19 12:17:01 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-19 12:17:03 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-06-19 12:17:03 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-19 12:17:03 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-19 12:17:03 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-19 12:17:03 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1824 ms
+2020-06-19 12:17:03 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-19 12:17:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2020-06-19 12:17:04 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.124 seconds (JVM running for 5.381)

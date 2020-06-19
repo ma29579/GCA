@@ -1,7 +1,6 @@
 package de.gca1.onlineBoutique;
 
 import java.util.ArrayList;
-import java.util.UUID;
 
 public class OrderSummary {
 

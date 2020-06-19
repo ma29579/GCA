@@ -1,5 +1,7 @@
 package de.gca1.onlineBoutique;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +15,8 @@ import java.util.UUID;
 @RestController
 public class ShippingController {
 
+    private static final Logger logger = LoggerFactory.getLogger(ShippingController.class);
+
     @GetMapping("/shipping/cost/{productCosts}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Double> calculateShippingCosts(@PathVariable("productCosts") double productCosts) {
@@ -24,6 +28,7 @@ public class ShippingController {
         else
             shippingCosts = Double.valueOf(12.99);
 
+        logger.info("Erfolgreiche Berechnung der Versandkosten erfolgt!",productCosts, shippingCosts);
         return ResponseEntity.status(HttpStatus.OK).body(shippingCosts);
     }
 
@@ -34,9 +39,10 @@ public class ShippingController {
         try {
             DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/shipping", "gca", "gca");
             OrderInformation orderInformation = databaseHelper.addTrackingNumber(userID);
+            logger.info("Erfolgreiche Speicherung einer Trackingnumber!",orderInformation);
             return ResponseEntity.status(HttpStatus.OK).body(orderInformation);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Fehler bei der Datenbankverbindung!",e);
         }
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
