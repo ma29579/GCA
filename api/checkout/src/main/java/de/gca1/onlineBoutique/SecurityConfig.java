@@ -29,6 +29,5 @@ class Securityconfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.inMemoryAuthentication().withUser(env.getProperty("frontend.user")).password("{noop}" + env.getProperty("frontend.password")).roles("USER");
-        auth.inMemoryAuthentication().withUser(env.getProperty("checkout.user")).password("{noop}" + env.getProperty("checkout.password")).roles("USER");
-     }
+    }
 }
