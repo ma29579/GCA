@@ -1,22 +1,23 @@
 package de.gca1.onlineBoutique;
 
+import org.apache.tomcat.util.codec.binary.Base64;
+import org.springframework.core.env.Environment;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +27,9 @@ import java.util.UUID;
 public class CartController {
 
     private static final Logger logger = LoggerFactory.getLogger(CartController.class);
+
+    @Autowired
+    private Environment env;
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "http://localhost:4200")
@@ -68,6 +72,12 @@ public class CartController {
                 try {
                     url = new URL("http://localhost:8080/catalog/" + i.toString());
                     connection = (HttpURLConnection) url.openConnection();
+
+                    String auth = env.getProperty(env.getProperty("frontend.user") + ":" + env.getProperty("frontend.password"));
+                    byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
+                    String authHeaderValue = "Basic " + new String(encodedAuth);
+
+                    connection.setRequestProperty("Authorization", authHeaderValue);
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         JSONObject product = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));

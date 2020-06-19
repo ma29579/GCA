@@ -1,8 +1,11 @@
 package de.gca1.onlineBoutique;
 
 
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -20,6 +23,7 @@ import java.io.InputStreamReader;
 import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -28,6 +32,9 @@ import java.util.Scanner;
 public class CheckoutController {
 
     private static final Logger logger = LoggerFactory.getLogger(CheckoutController.class);
+
+    @Autowired
+    private Environment env;
 
     @RequestMapping("/checkout/validate")
     @CrossOrigin(origins = "*")
@@ -114,6 +121,10 @@ public class CheckoutController {
 
             connection = (HttpURLConnection) shippingAPI.openConnection();
 
+            String auth = env.getProperty(env.getProperty("shipping.user") + ":" + env.getProperty("shipping.password"));
+            byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
+            String authHeaderValue = "Basic " + new String(encodedAuth);
+
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
                 InputStream inputStream = connection.getInputStream();
@@ -135,6 +146,10 @@ public class CheckoutController {
             //Trackingnumber generieren
             URL shippingTrackingNumber = new URL("http://localhost:8082/shipping/trackingnumber/" + givenUserID);
             connection = (HttpURLConnection) shippingTrackingNumber.openConnection();
+
+            auth = env.getProperty(env.getProperty("shipping.user") + ":" + env.getProperty("shipping.password"));
+            encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
+            authHeaderValue = "Basic " + new String(encodedAuth);
 
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
