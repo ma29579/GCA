@@ -21,6 +21,7 @@ class Securityconfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().and().authorizeRequests()
                 .antMatchers("/security/guest").hasRole("USER")
                 .antMatchers("/security/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
                 .and().csrf().disable();
     }
 

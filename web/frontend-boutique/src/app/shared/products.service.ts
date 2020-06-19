@@ -1,28 +1,22 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService implements HttpInterceptor {
-
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-
-    request = request.clone({
-      withCredentials: true
-    });
-
-    return next.handle(request);
-  }
+export class ProductService{
   constructor(private http: HttpClient) {
   }
 
   getAll(): Observable<any> {
-    return this.http.get('//localhost:8080/catalog');
-  }
-
-  getByID(id: number): Observable<any> {
-    return this.http.get('//localhost:8080/catalog/' + id);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `Basic ` + btoa(`${environment.userName}:${environment.password}`)
+      })
+    };
+    return this.http.get('//localhost:8080/catalog', httpOptions);
   }
 }

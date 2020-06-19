@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,12 @@ export class ShippingService {
   }
 
   getShippingCost(cost: number): Observable<any> {
-    return this.http.get('//localhost:8082/shipping/cost/' + cost);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': `Basic ` + btoa(`${environment.userName}:${environment.password}`)
+      })
+    };
+    return this.http.get('//localhost:8082/shipping/cost/' + cost, httpOptions);
   }
 }

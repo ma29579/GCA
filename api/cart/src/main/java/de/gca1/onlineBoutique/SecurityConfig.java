@@ -11,7 +11,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 //Spring boot security configuration class.
 @Configuration
 @EnableWebSecurity      // Enables security for our application.
-class Securityconfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private Environment env;
@@ -21,6 +21,7 @@ class Securityconfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().and().authorizeRequests()
                 .antMatchers("/security/guest").hasRole("USER")
                 .antMatchers("/security/admin").hasRole("ADMIN")
+                .anyRequest().authenticated()
                 .and().csrf().disable();
     }
 
