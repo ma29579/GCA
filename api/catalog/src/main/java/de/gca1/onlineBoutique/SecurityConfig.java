@@ -16,6 +16,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private Environment env;
+
     // Securing the urls and allowing role-based access to these urls.
     @Override
     protected void configure(HttpSecurity http) throws Exception {

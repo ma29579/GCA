@@ -26,6 +26,8 @@ public class CatalogController {
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
     private ArrayList<Product> productList;
 
+
+
     @GetMapping("/catalog")
     @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts() {
