@@ -1,5 +1,6 @@
 package de.gca1.onlineBoutique;
 
+import javafx.application.Application;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 @RestController
@@ -70,8 +72,9 @@ public class CatalogController {
         productList = new ArrayList<Product>();
 
         try {
-            String filePath = new File("").getAbsolutePath();
-            JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(filePath +"\\src\\main\\resources\\products.json"));
+            var jsonFile = new ClassPathResource("/products.json");
+            JSONArray jsonArray = (JSONArray) jsonParser.parse(new InputStreamReader(new ClassPathResource("/products.json").getInputStream()));
+
             for (int i =0; i< jsonArray.size(); i++) {
                 JSONObject temp = (JSONObject) jsonArray.get(i);
 
