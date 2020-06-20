@@ -11,7 +11,7 @@ import {EventEmitter} from 'events';
 export class ProductsComponent implements OnInit {
 
   // @ts-ignore
-  products: Array<any> = [];
+  products = null;
 
   constructor(private productService: ProductService, private cartService: CartService) { }
 

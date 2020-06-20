@@ -181,8 +181,9 @@ export class CartComponent implements OnInit {
         this.cartService.setCartAmount(0);
         this.cartItem = [];
 
-        localStorage.removeItem('userId');
-        console.log(localStorage.getItem('userId'));
+        this.cartService.createUser().subscribe(user => {
+          localStorage.setItem('userId', user.userId);
+        });
         this.router.navigate(['/orderComplete']);
     });
   }
