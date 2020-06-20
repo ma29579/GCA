@@ -2,6 +2,8 @@ package de.gca1.onlineBoutique;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +18,8 @@ import java.util.UUID;
 public class ShippingController {
 
     private static final Logger logger = LoggerFactory.getLogger(ShippingController.class);
+    @Autowired
+    private Environment env;
 
     @GetMapping("/shipping/cost/{productCosts}")
     @CrossOrigin(origins = "*")
@@ -37,7 +41,7 @@ public class ShippingController {
     public ResponseEntity<OrderInformation> generateTrackingnumber(@PathVariable("userID") UUID userID) {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/shipping", "gca", "gca");
+            DatabaseHelper databaseHelper = new DatabaseHelper(env.getProperty("connectionString"), env.getProperty("connectionUser"), env.getProperty("connectionPassword"));
             OrderInformation orderInformation = databaseHelper.addTrackingNumber(userID);
             logger.info("Erfolgreiche Speicherung einer Trackingnumber!",orderInformation);
             return ResponseEntity.status(HttpStatus.OK).body(orderInformation);

@@ -78,7 +78,7 @@ public class CheckoutController {
 
             logger.info("Aufruf durch " + givenUserID);
 
-            URL cartAPI = new URL("http://localhost:8081/cart/" + givenUserID);
+            URL cartAPI = new URL(env.getProperty("cartApi") + givenUserID);
             HttpURLConnection connection = (HttpURLConnection) cartAPI.openConnection();
             String auth = env.getProperty("checkout.user") + ":" + env.getProperty("checkout.password");
             byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
@@ -121,7 +121,7 @@ public class CheckoutController {
 
             //Versandkosten validieren
             double validatedShippingCosts = 0;
-            URL shippingAPI = new URL("http://localhost:8082/shipping/cost/" + calculatedSum);
+            URL shippingAPI = new URL(env.getProperty("shippingApi") +"cost/" + calculatedSum);
 
             connection = (HttpURLConnection) shippingAPI.openConnection();
             connection.setRequestProperty("Authorization", authHeaderValue);
@@ -144,7 +144,7 @@ public class CheckoutController {
             }
 
             //Trackingnumber generieren
-            URL shippingTrackingNumber = new URL("http://localhost:8082/shipping/trackingnumber/" + givenUserID);
+            URL shippingTrackingNumber = new URL(env.getProperty("shippingApi") + "/trackingnumber/" + givenUserID);
             connection = (HttpURLConnection) shippingTrackingNumber.openConnection();
 
             auth = env.getProperty("checkout.user") + ":" + env.getProperty("checkout.password");

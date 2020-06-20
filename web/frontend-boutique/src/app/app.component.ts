@@ -12,7 +12,7 @@ export class AppComponent implements OnInit{
   faShoppingCart = faShoppingCart;
 
   cartAmount = 0;
-  hasUserId= false;
+  hasUserId = false;
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
