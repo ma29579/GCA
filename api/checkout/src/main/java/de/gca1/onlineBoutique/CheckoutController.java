@@ -80,6 +80,10 @@ public class CheckoutController {
 
             URL cartAPI = new URL("http://localhost:8081/cart/" + givenUserID);
             HttpURLConnection connection = (HttpURLConnection) cartAPI.openConnection();
+            String auth = env.getProperty("checkout.user") + ":" + env.getProperty("checkout.password");
+            byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
+            String authHeaderValue = "Basic " + new String(encodedAuth);
+            connection.setRequestProperty("Authorization", authHeaderValue);
 
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
@@ -120,11 +124,7 @@ public class CheckoutController {
             URL shippingAPI = new URL("http://localhost:8082/shipping/cost/" + calculatedSum);
 
             connection = (HttpURLConnection) shippingAPI.openConnection();
-
-            String auth = env.getProperty(env.getProperty("shipping.user") + ":" + env.getProperty("shipping.password"));
-            byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
-            String authHeaderValue = "Basic " + new String(encodedAuth);
-
+            connection.setRequestProperty("Authorization", authHeaderValue);
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
                 InputStream inputStream = connection.getInputStream();
@@ -147,9 +147,10 @@ public class CheckoutController {
             URL shippingTrackingNumber = new URL("http://localhost:8082/shipping/trackingnumber/" + givenUserID);
             connection = (HttpURLConnection) shippingTrackingNumber.openConnection();
 
-            auth = env.getProperty(env.getProperty("shipping.user") + ":" + env.getProperty("shipping.password"));
+            auth = env.getProperty("checkout.user") + ":" + env.getProperty("checkout.password");
             encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
             authHeaderValue = "Basic " + new String(encodedAuth);
+            connection.setRequestProperty("Authorization", authHeaderValue);
 
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 

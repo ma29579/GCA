@@ -3,6 +3,7 @@ package de.gca1.onlineBoutique;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -21,6 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.httpBasic().and().authorizeRequests()
                 .antMatchers("/security/guest").hasRole("USER")
                 .antMatchers("/security/admin").hasRole("ADMIN")
+                .antMatchers(HttpMethod.OPTIONS, "**").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable();
     }

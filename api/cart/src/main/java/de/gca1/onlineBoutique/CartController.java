@@ -71,12 +71,12 @@ public class CartController {
             for (Integer i : itemsByID) {
                 try {
                     url = new URL("http://localhost:8080/catalog/" + i.toString());
-                    connection = (HttpURLConnection) url.openConnection();
 
-                    String auth = env.getProperty(env.getProperty("frontend.user") + ":" + env.getProperty("frontend.password"));
+
+                    String auth = env.getProperty("cart.user") + ":" + env.getProperty("cart.password");
                     byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
                     String authHeaderValue = "Basic " + new String(encodedAuth);
-
+                    connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestProperty("Authorization", authHeaderValue);
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
