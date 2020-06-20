@@ -32,11 +32,11 @@ public class CartController {
     private Environment env;
 
     @RequestMapping("/cart/addProduct/{productID}/{userID}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<Boolean> addProduct(@PathVariable("productID") int productID, @PathVariable("userID") UUID userID) {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
+            DatabaseHelper databaseHelper = new DatabaseHelper(env.getProperty("connectionString"), env.getProperty("connectionUser"), env.getProperty("connectionPassword"));
             databaseHelper.addProduct(userID, productID);
             logger.info("Erfolgreiches Hinzufügen eines Produkts in den Warenkorb eines Benutzers!",userID,productID);
             return ResponseEntity.status(HttpStatus.OK).body(true);
@@ -55,7 +55,7 @@ public class CartController {
         StringBuffer result = new StringBuffer();
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
+            DatabaseHelper databaseHelper = new DatabaseHelper(env.getProperty("connectionString"), env.getProperty("connectionUser"), env.getProperty("connectionPassword"));
             itemsByID = databaseHelper.getAllEntries(userID);
         } catch (SQLException e) {
             logger.error("Fehler bei der Datenbankverbindung!", e);
@@ -70,7 +70,7 @@ public class CartController {
 
             for (Integer i : itemsByID) {
                 try {
-                    url = new URL("http://localhost:8080/catalog/" + i.toString());
+                    url = new URL( env.getProperty("catalogApi") + i.toString());
 
 
                     String auth = env.getProperty("cart.user") + ":" + env.getProperty("cart.password");
@@ -112,11 +112,11 @@ public class CartController {
     }
 
     @RequestMapping("/cart/itemNumber/{userID}")
-    @CrossOrigin(origins = "http://localhost:4200")
+    @CrossOrigin(origins = "*")
     public int getItemNumber(@PathVariable("userID") UUID userID) {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
+            DatabaseHelper databaseHelper = new DatabaseHelper(env.getProperty("connectionString"), env.getProperty("connectionUser"), env.getProperty("connectionPassword"));
             Integer totalItemNumberByUserID = databaseHelper.getEntryNumberByUserID(userID);
             logger.info("Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer " + userID + " ermittelt werden", totalItemNumberByUserID);
             return totalItemNumberByUserID;
@@ -133,7 +133,7 @@ public class CartController {
     public ResponseEntity<User> createUserID() {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
+            DatabaseHelper databaseHelper = new DatabaseHelper(env.getProperty("connectionString"), env.getProperty("connectionUser"), env.getProperty("connectionPassword"));
             User user = databaseHelper.addUserID();
 
             logger.info("Es konnte eine ID für den anfragenden Nutzer erstellt werden!", user);
@@ -150,7 +150,7 @@ public class CartController {
     public void emptyCartByUserID(@PathVariable("userID") UUID userID) {
 
         try {
-            DatabaseHelper databaseHelper = new DatabaseHelper("jdbc:postgresql://localhost:5432/onlineBoutique", "gca", "gca");
+            DatabaseHelper databaseHelper = new DatabaseHelper(env.getProperty("connectionString"), env.getProperty("connectionUser"), env.getProperty("connectionPassword"));
             User user = databaseHelper.addUserID();
             databaseHelper.deleteAllCartEntriesByUserID(userID);
             logger.info("Erfolgreiches Entfernen der Warenkorbeinträge für den Benutzer " + userID);
