@@ -144,7 +144,7 @@ public class CheckoutController {
             }
 
             //Trackingnumber generieren
-            URL shippingTrackingNumber = new URL(env.getProperty("shippingApi") + "/trackingnumber/" + givenUserID);
+            URL shippingTrackingNumber = new URL(env.getProperty("shippingApi") + "trackingnumber/" + givenUserID);
             connection = (HttpURLConnection) shippingTrackingNumber.openConnection();
 
             auth = env.getProperty("checkout.user") + ":" + env.getProperty("checkout.password");
