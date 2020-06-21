@@ -1,0 +1,6 @@
+### CART-API - Backend ###
+FROM openjdk:11.0.7-jre
+VOLUME /tmp
+ARG JAR_FILE=cartAPI.jar
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

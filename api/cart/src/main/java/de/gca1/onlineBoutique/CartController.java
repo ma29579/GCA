@@ -70,6 +70,7 @@ public class CartController {
 
             for (Integer i : itemsByID) {
                 try {
+                    
                     url = new URL( env.getProperty("catalogApi") + i.toString());
 
 
