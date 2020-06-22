@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: gca_1
 spec:
-  type: load-balancer
+  type: LoadBalancer
   selector:
-    container:
-      - name: shipping-api
-        image: ./Shipping
+    containers:
+    - name: shipping-api
+      image: ../Shipping
   ports:
     - protocol: TCP
       port: 8082

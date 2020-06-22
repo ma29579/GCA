@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gca-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: gca-frontend
+  template:
+    metadata:
+      labels:
+        run: gca-frontend
+    spec:
+      containers:
+      - name: gca-frontend
+        image: mthom1035/gca_deployment:gca_frontend
+        ports:
+        - containerPort: 80
