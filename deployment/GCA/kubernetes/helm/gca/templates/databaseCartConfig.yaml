@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-cart-config
+  labels:
+    app: database-cart
+data:
+  POSTGRES_DB: onlineBoutique
+  POSTGRES_USER: gca
+  POSTGRES_PASSWORD: gca

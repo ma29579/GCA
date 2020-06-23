@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: cart-api
-        image: mthom1035/gca_deployment:cart_api
+        image: gca_cart-api
         ports:
         - containerPort: 8081

@@ -5,6 +5,7 @@ metadata:
   labels:
     run: cart-api
 spec:
+  type: LoadBalancer
   ports:
   - port: 8081
     protocol: TCP
