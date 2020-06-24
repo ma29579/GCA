@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpEvent, HttpHandler, HttpHeaders, HttpInterceptor, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {environment} from "../../environments/environment";
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +17,6 @@ export class ShippingService {
         'Authorization': `Basic ` + btoa(`${environment.userName}:${environment.password}`)
       })
     };
-    return this.http.get('//localhost:8082/shipping/cost/' + cost, httpOptions);
+    return this.http.get('//' + environment.shippingApi + '/shipping/cost/' + cost, httpOptions);
   }
 }
