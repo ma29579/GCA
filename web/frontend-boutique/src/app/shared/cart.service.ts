@@ -22,11 +22,11 @@ export class CartService {
 
 
   getCart(): Observable<any> {
-    return this.http.get('//' + environment.cartApi + '/cart/' + localStorage.getItem('userId'), this.httpOptions);
+    return this.http.get(environment.cartApi + '/cart/' + localStorage.getItem('userId'), this.httpOptions);
   }
 
   getCartAmount(): Observable<any> {
-    return this.http.get('//' + environment.cartApi + '/cart/itemNumber/' + localStorage.getItem('userId'), this.httpOptions);
+    return this.http.get(environment.cartApi + '/cart/itemNumber/' + localStorage.getItem('userId'), this.httpOptions);
   }
 
   setCartAmount(amount: number) {
@@ -34,13 +34,13 @@ export class CartService {
   }
 
   addProductByID(id: number): Observable<any> {
-    return this.http.get('//' + environment.cartApi + '/cart/addProduct/' + id + '/' + localStorage.getItem('userId'), this.httpOptions);
+    return this.http.get(environment.cartApi + '/cart/addProduct/' + id + '/' + localStorage.getItem('userId'), this.httpOptions);
   }
   createUser(): Observable<any> {
-    return this.http.get('//' + environment.cartApi + '/cart/init', this.httpOptions);
+    return this.http.get(environment.cartApi + '/cart/init', this.httpOptions);
   }
 
   deleteCart(): Observable<any> {
-    return this.http.get('//' + environment.cartApi + '/cart/empty/' + localStorage.getItem('userId'), this.httpOptions);
+    return this.http.get(environment.cartApi + '/cart/empty/' + localStorage.getItem('userId'), this.httpOptions);
   }
 }

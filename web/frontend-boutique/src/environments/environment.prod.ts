@@ -2,8 +2,8 @@ export const environment = {
   production: true,
   userName: 'frontendUser',
   password: 'frontendPassword',
-  catalogApi: 'catalog-api:8080',
-  cartApi: 'cart-api:8081',
-  shippingApi: 'shipping-api:8082',
-  checkoutApi: 'checkout-api:8083'
+  catalogApi: 'http://catalog-api:8080',
+  cartApi: 'http://cart-api:8081',
+  shippingApi: 'http://shipping-api:8082',
+  checkoutApi: 'http://checkout-api:8083'
 };

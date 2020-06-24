@@ -17,6 +17,6 @@ export class ShippingService {
         'Authorization': `Basic ` + btoa(`${environment.userName}:${environment.password}`)
       })
     };
-    return this.http.get('//' + environment.shippingApi + '/shipping/cost/' + cost, httpOptions);
+    return this.http.get(environment.shippingApi + '/shipping/cost/' + cost, httpOptions);
   }
 }
