@@ -17,6 +17,37 @@ spec:
         image: mthom1035/gca_deployment:catalog_api
         ports:
         - containerPort: 8080
+        env:
+          - name: CART_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: cart_api_username
+          - name: CART_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: cart_api_password
+          - name: CHECKOUT_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_username
+          - name: CHECKOUT_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_password
+          - name: FRONTEND_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_username
+          - name: FRONTEND_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_password
         resources:
           requests:
             cpu: "250m"
