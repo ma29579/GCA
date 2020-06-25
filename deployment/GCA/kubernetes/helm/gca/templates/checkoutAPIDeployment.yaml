@@ -17,3 +17,9 @@ spec:
         image: mthom1035/gca_deployment:checkout_api
         ports:
         - containerPort: 8083
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"
+        

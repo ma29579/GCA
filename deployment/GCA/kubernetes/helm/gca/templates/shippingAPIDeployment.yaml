@@ -17,3 +17,8 @@ spec:
         image: mthom1035/gca_deployment:shipping_api
         ports:
         - containerPort: 8082
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"
