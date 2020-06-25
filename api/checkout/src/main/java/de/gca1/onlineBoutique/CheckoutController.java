@@ -36,7 +36,7 @@ public class CheckoutController {
     @Autowired
     private Environment env;
 
-    @RequestMapping("/checkout/validate")
+    @RequestMapping("/api/checkout/validate")
     @CrossOrigin(origins = "*")
     public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) {
 

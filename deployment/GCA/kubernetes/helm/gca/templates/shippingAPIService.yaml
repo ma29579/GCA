@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shipping-api
+  labels:
+    run: shipping-api
+spec:
+  ports:
+  - port: 8082
+    protocol: TCP
+  selector:
+    run: shipping-api
