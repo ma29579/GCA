@@ -17,6 +17,6 @@ export class ProductService{
         'Authorization': `Basic ` + btoa(`${environment.userName}:${environment.password}`)
       })
     };
-    return this.http.get(environment.catalogApi + '/catalog', httpOptions);
+    return this.http.get(environment.catalogApi + '/', httpOptions);
   }
 }

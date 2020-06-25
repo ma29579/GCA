@@ -6,10 +6,10 @@ export const environment = {
   production: false,
   userName: 'frontendUser',
   password: 'frontendPassword',
-  catalogApi: 'http://catalog-api:8080',
-  cartApi: 'http://cart-api:8081',
-  shippingApi: 'http://shipping-api:8082',
-  checkoutApi: 'http://checkout-api:8083',
+  catalogApi: 'http://localhost/api/catalog',
+  cartApi: 'http://localhost/api',
+  shippingApi: 'http://localhost/api',
+  checkoutApi: 'http://localhost/api',
   CATALOG_API_SERVICE_HOST: $ENV.CATALOG_API_SERVICE_HOST
 };
 
