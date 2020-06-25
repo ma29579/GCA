@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import {CartService} from './shared/cart.service';
-import {environment} from "../environments/environment";
+import {environment} from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
   constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
-    console.log("!!", $ENV.CATALOG_API_SERVICE_HOST);
+    console.log("!?", environment.CATALOG_API_SERVICE_HOST);
     if (!localStorage.getItem('userId')) {
       this.cartService.createUser().subscribe(user => {
         console.log(user);
