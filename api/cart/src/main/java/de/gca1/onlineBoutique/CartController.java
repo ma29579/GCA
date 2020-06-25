@@ -31,7 +31,7 @@ public class CartController {
     @Autowired
     private Environment env;
 
-    @RequestMapping("/cart/addProduct/{productID}/{userID}")
+    @RequestMapping("/api/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Boolean> addProduct(@PathVariable("productID") int productID, @PathVariable("userID") UUID userID) {
 
@@ -46,7 +46,7 @@ public class CartController {
         }
     }
 
-    @RequestMapping("/cart/{userID}")
+    @RequestMapping("/api/cart/{userID}")
     @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
 
@@ -112,7 +112,7 @@ public class CartController {
 
     }
 
-    @RequestMapping("/cart/itemNumber/{userID}")
+    @RequestMapping("/api/cart/itemNumber/{userID}")
     @CrossOrigin(origins = "*")
     public int getItemNumber(@PathVariable("userID") UUID userID) {
 
@@ -129,7 +129,7 @@ public class CartController {
     }
 
 
-    @RequestMapping("/cart/init")
+    @RequestMapping("/api/cart/init")
     @CrossOrigin(origins = "*")
     public ResponseEntity<User> createUserID() {
 
@@ -146,7 +146,7 @@ public class CartController {
         }
     }
 
-    @RequestMapping("/cart/empty/{userID}")
+    @RequestMapping("/api/cart/empty/{userID}")
     @CrossOrigin(origins = "*")
     public void emptyCartByUserID(@PathVariable("userID") UUID userID) {
 
