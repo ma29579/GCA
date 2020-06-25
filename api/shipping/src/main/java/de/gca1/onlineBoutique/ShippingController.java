@@ -21,7 +21,7 @@ public class ShippingController {
     @Autowired
     private Environment env;
 
-    @GetMapping("/shipping/cost/{productCosts}")
+    @GetMapping("/api/shipping/cost/{productCosts}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Double> calculateShippingCosts(@PathVariable("productCosts") double productCosts) {
 
@@ -36,7 +36,7 @@ public class ShippingController {
         return ResponseEntity.status(HttpStatus.OK).body(shippingCosts);
     }
 
-    @GetMapping("/shipping/trackingnumber/{userID}")
+    @GetMapping("/api/shipping/trackingnumber/{userID}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<OrderInformation> generateTrackingnumber(@PathVariable("userID") UUID userID) {
 
