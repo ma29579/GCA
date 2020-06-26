@@ -1,5 +1,11 @@
 package de.gca1.onlineBoutique;
 
+import io.vertx.circuitbreaker.CircuitBreaker;
+import io.vertx.circuitbreaker.CircuitBreakerOptions;
+import io.vertx.core.Vertx;
+import io.vertx.core.http.HttpClientOptions;
+import io.vertx.ext.web.client.WebClient;
+import io.vertx.ext.web.client.WebClientOptions;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.core.env.Environment;
 import org.json.simple.JSONObject;
@@ -12,11 +18,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
+
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.http.HttpClient;
 import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -27,6 +36,10 @@ import java.util.UUID;
 public class CartController {
 
     private static final Logger logger = LoggerFactory.getLogger(CartController.class);
+
+    private Vertx vertx = Vertx.vertx();
+    private CircuitBreaker circuitBreaker = CircuitBreaker.create("cart_circuit_breaker", vertx,
+            new CircuitBreakerOptions().setMaxFailures(5).setTimeout(2000).setFallbackOnFailure(true).setResetTimeout(10000).setMaxRetries(2));
 
     @Autowired
     private Environment env;
@@ -70,14 +83,32 @@ public class CartController {
 
             for (Integer i : itemsByID) {
                 try {
-                    
-                    url = new URL( env.getProperty("catalogApi") + i.toString());
-
 
                     String auth = env.getProperty("cart.user") + ":" + env.getProperty("cart.password");
                     byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
                     String authHeaderValue = "Basic " + new String(encodedAuth);
-                    connection = (HttpURLConnection) url.openConnection();
+
+                    WebClientOptions options = new WebClientOptions();
+                    WebClient client = WebClient.create(vertx);
+
+                    circuitBreaker.executeWithFallback(
+                            future -> {
+                                client.getAbs("http://httpstat.us/200?sleep=3000").putHeader("Authorization", authHeaderValue).send(response -> {
+                                    if(response.failed()){
+                                        future.fail("FEHLER");
+                                    } else {
+                                        System.out.println("PASST");
+                                        future.complete();
+                                    }
+                                });
+                            }, fail -> {
+                                System.out.println("FEHLER 2");
+                                return null;
+                            });
+
+                    url = new URL( env.getProperty("catalogApi") + i.toString());
+
+                    /*connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestProperty("Authorization", authHeaderValue);
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
@@ -91,7 +122,7 @@ public class CartController {
 
                         cartProducts.add(new Product(id, name, price, description, imageUrl));
 
-                    }
+                    }*/
 
                 } catch (MalformedURLException e) {
                     logger.error("Es wurde eine fehlerhafte URL übermittelt!",e);
@@ -99,9 +130,9 @@ public class CartController {
                 } catch (IOException e) {
                     logger.error("Der Inhalt des Response konnte nicht ausgelesen werden!",e);
                     e.printStackTrace();
-                } catch (ParseException e) {
+                } /*catch (ParseException e) {
                     logger.error("Das Parsen der JSON-Nachricht im Response-Body schlug fehl!",e);
-                }
+                }*/
             }
 
             return cartProducts;

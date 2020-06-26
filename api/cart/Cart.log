@@ -1,130 +1,66 @@
-2020-06-19 12:52:35 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 14276 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 12:52:35 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 12:52:36 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 12:52:36 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 12:52:36 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 12:52:36 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 12:52:36 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1657 ms
-2020-06-19 12:52:37 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@66b59b7d, org.springframework.security.web.context.SecurityContextPersistenceFilter@20b9d5d5, org.springframework.security.web.header.HeaderWriterFilter@77a074b4, org.springframework.security.web.authentication.logout.LogoutFilter@2938127d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@32130e61, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60c8a093, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16727bf0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@53311681, org.springframework.security.web.session.SessionManagementFilter@4228bf58, org.springframework.security.web.access.ExceptionTranslationFilter@7b948f3e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@67514bdd]
-2020-06-19 12:52:37 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 12:52:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 12:52:37 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.098 seconds (JVM running for 4.27)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-2020-06-19 13:01:30 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 13:01:30 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 13:01:30 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2020-06-19 13:01:30 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:01:37 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:02:37 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:02:40 [http-nio-8081-exec-6] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:11:07 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:11:21 [http-nio-8081-exec-10] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:11:34 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:12:03 [http-nio-8081-exec-4] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:13:08 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:13:10 [http-nio-8081-exec-9] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:13:14 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:14:05 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:20:13 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:20:20 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:23:19 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:23:51 [http-nio-8081-exec-10] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:25:07 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:25:21 [http-nio-8081-exec-6] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:25:34 [http-nio-8081-exec-9] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:25:45 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:26:32 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:26:33 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:26:49 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:28:03 [http-nio-8081-exec-6] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:28:05 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:28:10 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:28:41 [http-nio-8081-exec-10] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:28:42 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:30:17 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:30:19 [http-nio-8081-exec-9] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:33:49 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 18188 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 13:33:49 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 13:33:51 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 13:33:51 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 13:33:51 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 13:33:51 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 13:33:51 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1836 ms
-2020-06-19 13:33:51 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6e4c0d8c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4dba773d, org.springframework.security.web.header.HeaderWriterFilter@2a369e14, org.springframework.security.web.authentication.logout.LogoutFilter@75d4a80f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1352434e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c58255, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76ad6715, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3e3315d9, org.springframework.security.web.session.SessionManagementFilter@a5272be, org.springframework.security.web.access.ExceptionTranslationFilter@60c8a093, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@31c628e7]
-2020-06-19 13:33:52 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 13:33:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 13:33:52 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.238 seconds (JVM running for 4.74)
-2020-06-19 13:34:04 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 13:34:04 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 13:34:04 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2020-06-19 13:34:04 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [267] milliseconds.
-2020-06-19 13:34:04 [http-nio-8081-exec-3] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [148] milliseconds.
-2020-06-19 13:34:05 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:34:16 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Erfolgreiches Hinzufügen eines Produkts in den Warenkorb eines Benutzers!
-2020-06-19 13:34:16 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:35:33 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:35:46 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 741c2942-3917-454c-86a7-7490d53c2e02 ermittelt werden
-2020-06-19 13:38:02 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte eine ID für den anfragenden Nutzer erstellt werden!
-2020-06-19 13:59:04 [http-nio-8081-exec-10] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:59:31 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:59:36 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 13:59:44 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:01:44 [http-nio-8081-exec-7] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer fa1f2246-929f-135e-95df-dc4b3a073863 ermittelt werden
-2020-06-19 14:03:17 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:03:24 [http-nio-8081-exec-10] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:05:16 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:07:32 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:07:42 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:08:03 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:08:27 [http-nio-8081-exec-4] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:08:34 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:10:13 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:15:27 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:26:37 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 15916 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:26:37 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:26:39 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:26:39 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:26:39 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:26:39 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:26:39 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1775 ms
-2020-06-19 14:26:40 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d6bbd35, org.springframework.security.web.context.SecurityContextPersistenceFilter@76ad6715, org.springframework.security.web.header.HeaderWriterFilter@3204e238, org.springframework.security.web.authentication.logout.LogoutFilter@12eedfee, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@26586b74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2938127d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48b4a043, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5c5d6175, org.springframework.security.web.session.SessionManagementFilter@5ea4300e, org.springframework.security.web.access.ExceptionTranslationFilter@291373d3, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@26350ea2]
-2020-06-19 14:26:40 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:26:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:26:40 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.238 seconds (JVM running for 4.654)
-2020-06-19 14:27:46 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:27:46 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:27:46 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 23 ms
-2020-06-19 14:27:46 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [282] milliseconds.
-2020-06-19 14:27:46 [http-nio-8081-exec-4] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [204] milliseconds.
-2020-06-19 14:27:46 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer fa1f2246-929f-135e-95df-dc4b3a073863 ermittelt werden
-2020-06-19 14:28:16 [http-nio-8081-exec-9] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer fa1f2246-929f-135e-95df-dc4b3a073863 ermittelt werden
-2020-06-19 14:32:10 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 8408 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:32:10 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:32:18 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:32:18 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:32:18 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:32:18 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:32:18 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 7755 ms
-2020-06-19 14:32:19 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@57435801, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f2bd6d9, org.springframework.security.web.header.HeaderWriterFilter@188ac8a3, org.springframework.security.web.authentication.logout.LogoutFilter@1f53481b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4b0f2299, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43d9f1a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5a3a1bf9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2da66a44, org.springframework.security.web.session.SessionManagementFilter@3078cac, org.springframework.security.web.access.ExceptionTranslationFilter@7e5843db, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@60b34931]
-2020-06-19 14:32:19 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:32:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:32:21 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 11.302 seconds (JVM running for 13.968)
-2020-06-19 14:32:52 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:32:52 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:32:52 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
-2020-06-19 14:32:53 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [283] milliseconds.
-2020-06-19 14:32:53 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer fa1f2246-929f-135e-95df-dc4b3a073863 ermittelt werden
-2020-06-19 14:33:10 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Erfolgreiches Hinzufügen eines Produkts in den Warenkorb eines Benutzers!
-2020-06-19 14:33:11 [http-nio-8081-exec-4] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer fa1f2246-929f-135e-95df-dc4b3a073863 ermittelt werden
-2020-06-19 14:33:16 [http-nio-8081-exec-7] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at de.gca1.onlineBoutique.CartController.getProducts(CartController.java:77)
+2020-06-26 18:49:43 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 2032 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 18:49:43 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 18:49:45 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 18:49:45 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 18:49:45 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 18:49:45 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 18:49:45 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1422 ms
+2020-06-26 18:49:45 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@411a5965, org.springframework.security.web.context.SecurityContextPersistenceFilter@176555c, org.springframework.security.web.header.HeaderWriterFilter@2a334bac, org.springframework.security.web.authentication.logout.LogoutFilter@7c52fc81, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6749fe50, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@795f8317, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47ac613b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fe533ff, org.springframework.security.web.session.SessionManagementFilter@2e3572e8, org.springframework.security.web.access.ExceptionTranslationFilter@30b975ad, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@167381c7]
+2020-06-26 18:49:45 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 18:49:46 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 18:49:46 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 2.851 seconds (JVM running for 5.048)
+2020-06-26 18:54:03 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 11108 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 18:54:03 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 18:54:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 18:54:05 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 18:54:05 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 18:54:05 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 18:54:05 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1871 ms
+2020-06-26 18:54:06 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@71f1cc02, org.springframework.security.web.context.SecurityContextPersistenceFilter@3b705be7, org.springframework.security.web.header.HeaderWriterFilter@18371d89, org.springframework.security.web.authentication.logout.LogoutFilter@2ae62bb6, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1e3e1014, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43acd79e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7a45d714, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f14761c, org.springframework.security.web.session.SessionManagementFilter@2ff7a73, org.springframework.security.web.access.ExceptionTranslationFilter@c017175, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6fbc1bb]
+2020-06-26 18:54:06 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 18:54:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 18:54:06 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.404 seconds (JVM running for 5.704)
+2020-06-26 19:24:23 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 2812 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:24:23 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:24:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:24:26 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:24:26 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:24:26 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:24:26 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2601 ms
+2020-06-26 19:24:27 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20ab76ee, org.springframework.security.web.context.SecurityContextPersistenceFilter@26ca61bf, org.springframework.security.web.header.HeaderWriterFilter@68dd39d2, org.springframework.security.web.authentication.logout.LogoutFilter@1c067c0d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@40ac6b76, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fa5f81c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@60e06f7d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@485caa8f, org.springframework.security.web.session.SessionManagementFilter@3f96f020, org.springframework.security.web.access.ExceptionTranslationFilter@1d06f16f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@168b4cb0]
+2020-06-26 19:24:27 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:24:27 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:24:27 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.459 seconds (JVM running for 7.599)
+2020-06-26 19:24:39 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 10944 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:24:39 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:24:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:24:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:24:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:24:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:24:40 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1813 ms
+2020-06-26 19:24:41 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4337afd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2539cd1c, org.springframework.security.web.header.HeaderWriterFilter@294f9d50, org.springframework.security.web.authentication.logout.LogoutFilter@343e225a, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@17dad32f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@74606204, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@93824eb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1d02af26, org.springframework.security.web.session.SessionManagementFilter@610d28b8, org.springframework.security.web.access.ExceptionTranslationFilter@759de304, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7237f3c1]
+2020-06-26 19:24:41 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:24:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:24:41 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.489 seconds (JVM running for 5.514)
+2020-06-26 19:25:02 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:25:02 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:25:02 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-06-26 19:25:02 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [461] milliseconds.
+2020-06-26 19:27:22 [http-nio-8081-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'DATABASE_CART_SERVICE_HOST' in value "jdbc:postgresql://${DATABASE_CART_SERVICE_HOST}:${DATABASE_CART_SERVICE_PORT}/onlineBoutique"] with root cause
+java.lang.IllegalArgumentException: Could not resolve placeholder 'DATABASE_CART_SERVICE_HOST' in value "jdbc:postgresql://${DATABASE_CART_SERVICE_HOST}:${DATABASE_CART_SERVICE_PORT}/onlineBoutique"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:227)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at de.gca1.onlineBoutique.CartController.getProducts(CartController.java:71)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
@@ -134,8 +70,8 @@ java.lang.NullPointerException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -204,31 +140,37 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-2020-06-19 14:36:56 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 22300 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:36:56 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:36:58 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:36:58 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:36:58 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:36:58 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:36:58 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2450 ms
-2020-06-19 14:36:59 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@8bd86c8, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f89331f, org.springframework.security.web.header.HeaderWriterFilter@2cae9b8, org.springframework.security.web.authentication.logout.LogoutFilter@48b4a043, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@51d387d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@16727bf0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c58255, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4fa9ab6, org.springframework.security.web.session.SessionManagementFilter@250a500b, org.springframework.security.web.access.ExceptionTranslationFilter@67e13bd0, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2e645fbd]
-2020-06-19 14:36:59 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:36:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:36:59 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.139 seconds (JVM running for 5.76)
-2020-06-19 14:37:07 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:37:07 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:37:07 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 14 ms
-2020-06-19 14:37:07 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [243] milliseconds.
-2020-06-19 14:37:07 [http-nio-8081-exec-4] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [128] milliseconds.
-2020-06-19 14:37:07 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:37:07 [http-nio-8081-exec-4] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at de.gca1.onlineBoutique.CartController.getProducts(CartController.java:77)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-06-26 19:28:08 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 1132 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:28:08 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:28:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:28:10 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:28:10 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:28:10 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:28:10 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1642 ms
+2020-06-26 19:28:10 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78ec89a6, org.springframework.security.web.context.SecurityContextPersistenceFilter@2582b0ef, org.springframework.security.web.header.HeaderWriterFilter@1860f3be, org.springframework.security.web.authentication.logout.LogoutFilter@32ec9c90, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1a07bf6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@769bd849, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@53c99b09, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3596b249, org.springframework.security.web.session.SessionManagementFilter@27443560, org.springframework.security.web.access.ExceptionTranslationFilter@3965bdf9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4dac121d]
+2020-06-26 19:28:10 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:28:10 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:28:10 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.156 seconds (JVM running for 5.081)
+2020-06-26 19:28:20 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:28:20 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:28:20 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-06-26 19:28:21 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [504] milliseconds.
+2020-06-26 19:28:21 [http-nio-8081-exec-1] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'CATALOG_API_SERVICE_HOST' in value "http://${CATALOG_API_SERVICE_HOST}:${CATALOG_API_SERVICE_PORT}/api/catalog/"] with root cause
+java.lang.IllegalArgumentException: Could not resolve placeholder 'CATALOG_API_SERVICE_HOST' in value "http://${CATALOG_API_SERVICE_HOST}:${CATALOG_API_SERVICE_PORT}/api/catalog/"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:178)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:124)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:236)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveNestedPlaceholders(AbstractPropertyResolver.java:227)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:88)
+	at org.springframework.core.env.PropertySourcesPropertyResolver.getProperty(PropertySourcesPropertyResolver.java:62)
+	at org.springframework.core.env.AbstractEnvironment.getProperty(AbstractEnvironment.java:535)
+	at de.gca1.onlineBoutique.CartController.getProducts(CartController.java:106)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
@@ -238,8 +180,8 @@ java.lang.NullPointerException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -308,15 +250,49 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-2020-06-19 14:37:30 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:37:31 [http-nio-8081-exec-6] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
-java.lang.NullPointerException: null
-	at de.gca1.onlineBoutique.CartController.getProducts(CartController.java:77)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-06-26 19:29:03 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 9972 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:29:03 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:29:04 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:29:04 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:29:04 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:29:04 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:29:04 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1617 ms
+2020-06-26 19:29:05 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@427a12b6, org.springframework.security.web.context.SecurityContextPersistenceFilter@7cfac39f, org.springframework.security.web.header.HeaderWriterFilter@2ceee4b6, org.springframework.security.web.authentication.logout.LogoutFilter@65cf4d6d, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6a1d526c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@50eb4a2c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@39f5b723, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6025d790, org.springframework.security.web.session.SessionManagementFilter@64942607, org.springframework.security.web.access.ExceptionTranslationFilter@77f991c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@9c73fff]
+2020-06-26 19:29:05 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:29:05 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:29:05 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.134 seconds (JVM running for 4.922)
+2020-06-26 19:29:14 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:29:14 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:29:14 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2020-06-26 19:29:14 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [339] milliseconds.
+2020-06-26 19:29:17 [http-nio-8081-exec-1] ERROR d.gca1.onlineBoutique.CartController - Der Inhalt des Response konnte nicht ausgelesen werden!
+java.net.ConnectException: Connection refused: connect
+	at java.base/java.net.PlainSocketImpl.connect0(Native Method)
+	at java.base/java.net.PlainSocketImpl.socketConnect(PlainSocketImpl.java:101)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at java.base/java.net.Socket.connect(Socket.java:558)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.http.HttpClient.<init>(HttpClient.java:242)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:341)
+	at java.base/sun.net.www.http.HttpClient.New(HttpClient.java:362)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getNewHttpClient(HttpURLConnection.java:1248)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1187)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1081)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.connect(HttpURLConnection.java:1015)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1587)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1515)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at de.gca1.onlineBoutique.CartController.getProducts(CartController.java:111)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
 	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
 	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
@@ -326,8 +302,8 @@ java.lang.NullPointerException: null
 	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
 	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
 	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:909)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
 	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
@@ -396,131 +372,182 @@ java.lang.NullPointerException: null
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.base/java.lang.Thread.run(Thread.java:830)
-2020-06-19 14:38:45 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 12880 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:38:45 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:38:47 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:38:47 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:38:47 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:38:47 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:38:47 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1857 ms
-2020-06-19 14:38:48 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4437ac07, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f94fb9d, org.springframework.security.web.header.HeaderWriterFilter@237f7970, org.springframework.security.web.authentication.logout.LogoutFilter@5ea4300e, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@48b4a043, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4228bf58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@250a500b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3f1ed068, org.springframework.security.web.session.SessionManagementFilter@2cae9b8, org.springframework.security.web.access.ExceptionTranslationFilter@45acdd11, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f5538a1]
-2020-06-19 14:38:48 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:38:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:38:48 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.432 seconds (JVM running for 5.043)
-2020-06-19 14:38:53 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:38:53 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:38:53 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2020-06-19 14:38:53 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [222] milliseconds.
-2020-06-19 14:38:53 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [293] milliseconds.
-2020-06-19 14:38:54 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:39:18 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:39:36 [http-nio-8081-exec-6] INFO  d.gca1.onlineBoutique.CartController - Erfolgreiches Hinzufügen eines Produkts in den Warenkorb eines Benutzers!
-2020-06-19 14:39:36 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:40:52 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 15320 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:40:52 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:40:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:40:55 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:40:55 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:40:55 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:40:55 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3114 ms
-2020-06-19 14:40:55 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2b4b96a4, org.springframework.security.web.context.SecurityContextPersistenceFilter@465b38e6, org.springframework.security.web.header.HeaderWriterFilter@497b560e, org.springframework.security.web.authentication.logout.LogoutFilter@4d634127, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@72eb6200, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b13467c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7bf01cb, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2dd8ff1d, org.springframework.security.web.session.SessionManagementFilter@d5bb1c4, org.springframework.security.web.access.ExceptionTranslationFilter@2d85fb64, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a9344f5]
-2020-06-19 14:40:56 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:40:56 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:40:56 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 5.134 seconds (JVM running for 6.634)
-2020-06-19 14:40:56 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:40:56 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:40:56 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 12 ms
-2020-06-19 14:40:57 [http-nio-8081-exec-3] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [264] milliseconds.
-2020-06-19 14:40:57 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [264] milliseconds.
-2020-06-19 14:40:57 [http-nio-8081-exec-3] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:41:36 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:43:09 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 18744 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:43:09 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:43:11 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:43:11 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:43:11 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:43:11 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:43:11 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2504 ms
-2020-06-19 14:43:12 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f14b0f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@4f2d995e, org.springframework.security.web.header.HeaderWriterFilter@19a20bb2, org.springframework.security.web.authentication.logout.LogoutFilter@24a2e565, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6e0e5dec, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@75156240, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2b0e9f30, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b20706, org.springframework.security.web.session.SessionManagementFilter@34c70b5e, org.springframework.security.web.access.ExceptionTranslationFilter@668625f5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@479b5066]
-2020-06-19 14:43:12 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:43:13 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:43:13 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.735 seconds (JVM running for 6.964)
-2020-06-19 14:43:19 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:43:19 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:43:19 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 25 ms
-2020-06-19 14:43:19 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [262] milliseconds.
-2020-06-19 14:43:19 [http-nio-8081-exec-3] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [230] milliseconds.
-2020-06-19 14:43:20 [http-nio-8081-exec-1] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:45:17 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:45:23 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on DESKTOP-6CDATJQ with PID 3196 (C:\dev\Studium\GCA\abschluss\api\cart\target\classes started by Gerrit in C:\dev\Studium\GCA\abschluss\api\cart)
-2020-06-19 14:45:23 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-19 14:45:24 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-19 14:45:24 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-19 14:45:24 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-19 14:45:25 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-19 14:45:25 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1705 ms
-2020-06-19 14:45:25 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67514bdd, org.springframework.security.web.context.SecurityContextPersistenceFilter@2f4c2cd4, org.springframework.security.web.header.HeaderWriterFilter@46349b95, org.springframework.security.web.authentication.logout.LogoutFilter@38ed139b, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5a1c3cb4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@333c8791, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1457fde, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3b920bdc, org.springframework.security.web.session.SessionManagementFilter@58f39564, org.springframework.security.web.access.ExceptionTranslationFilter@44f24a20, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a1f5f71]
-2020-06-19 14:45:25 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-19 14:45:26 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-19 14:45:26 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.327 seconds (JVM running for 4.803)
-2020-06-19 14:45:26 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-06-19 14:45:26 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2020-06-19 14:45:26 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
-2020-06-19 14:45:26 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [303] milliseconds.
-2020-06-19 14:45:28 [http-nio-8081-exec-2] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:45:41 [http-nio-8081-exec-8] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:50:10 [http-nio-8081-exec-5] INFO  d.gca1.onlineBoutique.CartController - Es konnte erfolgreich die Anzahl der Produkte im Warenkorb für den Benutzer 9bb303ea-2eda-5b74-e2b3-946687db66f6 ermittelt werden
-2020-06-19 14:52:57 [http-nio-8081-exec-4] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.util.UUID'; nested exception is java.lang.IllegalArgumentException: Invalid UUID string: null]
-2020-06-19 14:54:34 [http-nio-8081-exec-6] INFO  d.gca1.onlineBoutique.CartController - Es konnte eine ID für den anfragenden Nutzer erstellt werden!
-2020-06-20 13:43:27 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 13428 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
-2020-06-20 13:43:27 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-20 13:43:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-20 13:43:31 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-20 13:43:31 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-20 13:43:31 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-20 13:43:31 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 3247 ms
-2020-06-20 13:43:31 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7c781c42, org.springframework.security.web.context.SecurityContextPersistenceFilter@2daf06fc, org.springframework.security.web.header.HeaderWriterFilter@3456558, org.springframework.security.web.authentication.logout.LogoutFilter@177c41d7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4d6ccc97, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5ceecfee, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@765d55d5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@795f8317, org.springframework.security.web.session.SessionManagementFilter@6342ff7f, org.springframework.security.web.access.ExceptionTranslationFilter@7426a448, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3ddeaa5f]
-2020-06-20 13:43:32 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-20 13:43:32 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-20 13:43:32 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 5.48 seconds (JVM running for 7.513)
-2020-06-20 13:43:57 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 3792 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
-2020-06-20 13:43:57 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-20 13:43:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-20 13:43:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-20 13:43:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-20 13:43:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-20 13:43:59 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2238 ms
-2020-06-20 13:43:59 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@551e4c6d, org.springframework.security.web.context.SecurityContextPersistenceFilter@f1dd5b4, org.springframework.security.web.header.HeaderWriterFilter@67f77f6e, org.springframework.security.web.authentication.logout.LogoutFilter@49d30c6f, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@2b0dc227, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5f96f6a2, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@37854b34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@625a9c5d, org.springframework.security.web.session.SessionManagementFilter@6fbc1bb, org.springframework.security.web.access.ExceptionTranslationFilter@5740ff5e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64f981e2]
-2020-06-20 13:44:00 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-20 13:44:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
-2020-06-20 13:44:00 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.912 seconds (JVM running for 6.572)
-2020-06-20 14:13:41 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 12392 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
-2020-06-20 14:13:41 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
-2020-06-20 14:13:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
-2020-06-20 14:13:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2020-06-20 14:13:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
-2020-06-20 14:13:50 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-2020-06-20 14:13:50 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8752 ms
-2020-06-20 14:13:51 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@539a138b, org.springframework.security.web.context.SecurityContextPersistenceFilter@30893e08, org.springframework.security.web.header.HeaderWriterFilter@2ecf5915, org.springframework.security.web.authentication.logout.LogoutFilter@9efcd90, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@3eb3232b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4548d254, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6badba10, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2cd4e16a, org.springframework.security.web.session.SessionManagementFilter@43b5021c, org.springframework.security.web.access.ExceptionTranslationFilter@66deec87, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64dae3b7]
-2020-06-20 14:13:52 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
-2020-06-20 14:13:52 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8081 is already in use
-2020-06-20 14:13:52 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
-2020-06-20 14:13:52 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
-2020-06-20 14:13:52 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-06-20 14:13:53 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8081 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
-
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2020-06-26 19:31:19 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 11372 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:31:19 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:31:21 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:31:21 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:31:21 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:31:21 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:31:21 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1983 ms
+2020-06-26 19:31:22 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2703d91, org.springframework.security.web.context.SecurityContextPersistenceFilter@fa5f81c, org.springframework.security.web.header.HeaderWriterFilter@60e3c26e, org.springframework.security.web.authentication.logout.LogoutFilter@7f7b6639, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@f0020b1, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1f2f0109, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@771a7d53, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5be052ca, org.springframework.security.web.session.SessionManagementFilter@26ca61bf, org.springframework.security.web.access.ExceptionTranslationFilter@68dd39d2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@35b17c06]
+2020-06-26 19:31:22 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:31:23 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:31:23 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.976 seconds (JVM running for 5.642)
+2020-06-26 19:31:27 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:31:27 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:31:27 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-06-26 19:31:27 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [357] milliseconds.
+2020-06-26 19:32:27 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 11656 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:32:27 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:32:29 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:32:29 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:32:29 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:32:29 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:32:29 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2012 ms
+2020-06-26 19:32:30 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2e5e6fc4, org.springframework.security.web.context.SecurityContextPersistenceFilter@373e6b9d, org.springframework.security.web.header.HeaderWriterFilter@6393bf8b, org.springframework.security.web.authentication.logout.LogoutFilter@4a9860, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@ea04cab, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@56b8aaf1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3c952a33, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2785db06, org.springframework.security.web.session.SessionManagementFilter@ec7b5de, org.springframework.security.web.access.ExceptionTranslationFilter@40709f9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2c748a15]
+2020-06-26 19:32:30 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:32:30 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:32:30 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.036 seconds (JVM running for 9.285)
+2020-06-26 19:32:32 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:32:32 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:32:32 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-06-26 19:32:33 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [445] milliseconds.
+2020-06-26 19:32:55 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:34:46 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 13916 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:34:46 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:34:48 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:34:48 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:34:48 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:34:48 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:34:48 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1891 ms
+2020-06-26 19:34:49 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@75023c53, org.springframework.security.web.context.SecurityContextPersistenceFilter@66a5755, org.springframework.security.web.header.HeaderWriterFilter@550e9be6, org.springframework.security.web.authentication.logout.LogoutFilter@3b4825f0, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@405b6d75, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6d6d480c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@40c2ce52, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66813e6e, org.springframework.security.web.session.SessionManagementFilter@6a5e167a, org.springframework.security.web.access.ExceptionTranslationFilter@16736040, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2703d91]
+2020-06-26 19:34:49 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:34:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:34:49 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.034 seconds (JVM running for 6.385)
+2020-06-26 19:34:53 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:34:53 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:34:53 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2020-06-26 19:34:54 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [388] milliseconds.
+2020-06-26 19:37:04 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 3564 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:37:04 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:37:06 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:37:06 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:37:06 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:37:06 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:37:06 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1592 ms
+2020-06-26 19:37:07 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7237f3c1, org.springframework.security.web.context.SecurityContextPersistenceFilter@769bd849, org.springframework.security.web.header.HeaderWriterFilter@78cfa264, org.springframework.security.web.authentication.logout.LogoutFilter@2abbd0d9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@713ec32d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@20a967fe, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c20cdd0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@781711b7, org.springframework.security.web.session.SessionManagementFilter@2582b0ef, org.springframework.security.web.access.ExceptionTranslationFilter@1860f3be, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3e28fee1]
+2020-06-26 19:37:07 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:37:07 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:37:07 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.202 seconds (JVM running for 4.855)
+2020-06-26 19:37:21 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:37:21 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:37:21 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-06-26 19:37:22 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [547] milliseconds.
+2020-06-26 19:39:38 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 8968 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:39:38 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:39:40 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:39:40 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:39:40 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:39:40 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:39:40 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2376 ms
+2020-06-26 19:39:41 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ebda593, org.springframework.security.web.context.SecurityContextPersistenceFilter@687e6293, org.springframework.security.web.header.HeaderWriterFilter@1b410308, org.springframework.security.web.authentication.logout.LogoutFilter@1860f3be, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@27443560, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@fb0a08c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e4579c7, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5792c08c, org.springframework.security.web.session.SessionManagementFilter@1f2f0109, org.springframework.security.web.access.ExceptionTranslationFilter@999b951, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23cbbd07]
+2020-06-26 19:39:41 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:39:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:39:41 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.183 seconds (JVM running for 6.336)
+2020-06-26 19:39:46 [http-nio-8081-exec-3] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:39:46 [http-nio-8081-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:39:46 [http-nio-8081-exec-3] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2020-06-26 19:39:47 [http-nio-8081-exec-3] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [401] milliseconds.
+2020-06-26 19:40:00 [vert.x-eventloop-thread-4] ERROR i.vertx.core.net.impl.ConnectionBase - Eine vorhandene Verbindung wurde vom Remotehost geschlossen
+2020-06-26 19:40:00 [vert.x-eventloop-thread-3] ERROR i.vertx.core.net.impl.ConnectionBase - Eine vorhandene Verbindung wurde vom Remotehost geschlossen
+2020-06-26 19:40:00 [vert.x-eventloop-thread-2] ERROR i.vertx.core.net.impl.ConnectionBase - Eine vorhandene Verbindung wurde vom Remotehost geschlossen
+2020-06-26 19:42:36 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 2344 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:42:36 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:42:37 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:42:37 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:42:37 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:42:37 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:42:37 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1660 ms
+2020-06-26 19:42:38 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@642a16aa, org.springframework.security.web.context.SecurityContextPersistenceFilter@20a967fe, org.springframework.security.web.header.HeaderWriterFilter@2b6a0ea9, org.springframework.security.web.authentication.logout.LogoutFilter@5d3ff859, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@36aab105, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@682abca7, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6b6eae52, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@642ee49c, org.springframework.security.web.session.SessionManagementFilter@769bd849, org.springframework.security.web.access.ExceptionTranslationFilter@78cfa264, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3b332962]
+2020-06-26 19:42:38 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:42:38 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:42:38 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.376 seconds (JVM running for 5.218)
+2020-06-26 19:43:52 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 10384 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:43:52 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:43:54 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:43:54 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:43:54 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:43:54 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:43:54 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1760 ms
+2020-06-26 19:43:54 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3bc69ce9, org.springframework.security.web.context.SecurityContextPersistenceFilter@7412a438, org.springframework.security.web.header.HeaderWriterFilter@4aa2877c, org.springframework.security.web.authentication.logout.LogoutFilter@5cff6b74, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1fd7a37, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3c952a33, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3a00b15d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@abad89c, org.springframework.security.web.session.SessionManagementFilter@1946384, org.springframework.security.web.access.ExceptionTranslationFilter@6ddee60f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@331ff3ac]
+2020-06-26 19:43:54 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:43:55 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:43:55 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.854 seconds (JVM running for 6.255)
+2020-06-26 19:44:09 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:44:14 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 5476 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:44:14 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:44:16 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:44:16 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:44:16 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:44:16 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:44:16 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1992 ms
+2020-06-26 19:44:17 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2001e48c, org.springframework.security.web.context.SecurityContextPersistenceFilter@33e434c8, org.springframework.security.web.header.HeaderWriterFilter@474179fa, org.springframework.security.web.authentication.logout.LogoutFilter@47248a48, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7ebe2e47, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@664212ab, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@115ca7de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@68ddd415, org.springframework.security.web.session.SessionManagementFilter@7ba93755, org.springframework.security.web.access.ExceptionTranslationFilter@2abc8034, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@707e4fe4]
+2020-06-26 19:44:17 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:44:17 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:44:17 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.887 seconds (JVM running for 6.531)
+2020-06-26 19:44:28 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:44:28 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:44:28 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2020-06-26 19:44:29 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [354] milliseconds.
+2020-06-26 19:44:34 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:44:39 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 2604 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:44:39 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:44:41 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:44:41 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:44:41 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:44:41 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:44:41 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1841 ms
+2020-06-26 19:44:41 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@60df7989, org.springframework.security.web.context.SecurityContextPersistenceFilter@40c2ce52, org.springframework.security.web.header.HeaderWriterFilter@1faf386c, org.springframework.security.web.authentication.logout.LogoutFilter@101ca8da, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@d4df0e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@60a7e509, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16ac5d35, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ab1127c, org.springframework.security.web.session.SessionManagementFilter@5b47731f, org.springframework.security.web.access.ExceptionTranslationFilter@6870c3c2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@66813e6e]
+2020-06-26 19:44:42 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:44:42 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:44:42 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.437 seconds (JVM running for 5.191)
+2020-06-26 19:44:46 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:44:46 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:44:46 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2020-06-26 19:44:47 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [450] milliseconds.
+2020-06-26 19:45:57 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 9116 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:45:57 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:45:59 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:45:59 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:45:59 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:45:59 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:45:59 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 1712 ms
+2020-06-26 19:46:00 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32456db0, org.springframework.security.web.context.SecurityContextPersistenceFilter@50a13c2f, org.springframework.security.web.header.HeaderWriterFilter@f0020b1, org.springframework.security.web.authentication.logout.LogoutFilter@5dcd0cdf, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6361b799, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53c99b09, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4997552e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f5827d0, org.springframework.security.web.session.SessionManagementFilter@76f881d9, org.springframework.security.web.access.ExceptionTranslationFilter@40ac6b76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4519f676]
+2020-06-26 19:46:00 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:46:00 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:46:00 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 3.335 seconds (JVM running for 5.37)
+2020-06-26 19:46:09 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:46:09 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:46:09 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-06-26 19:46:10 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [490] milliseconds.
+2020-06-26 19:46:46 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 4736 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:46:46 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:46:49 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:46:49 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:46:49 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:46:49 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:46:49 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2201 ms
+2020-06-26 19:46:50 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@65bb6275, org.springframework.security.web.context.SecurityContextPersistenceFilter@343e225a, org.springframework.security.web.header.HeaderWriterFilter@71cea1b8, org.springframework.security.web.authentication.logout.LogoutFilter@23cbbd07, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@54c622a7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4c0e426a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1b9d9a2b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@64da6cbd, org.springframework.security.web.session.SessionManagementFilter@4fb04a72, org.springframework.security.web.access.ExceptionTranslationFilter@5a97b17c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@32118208]
+2020-06-26 19:46:50 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:46:50 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:46:50 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.605 seconds (JVM running for 6.736)
+2020-06-26 19:46:51 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:46:51 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:46:51 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-06-26 19:46:53 [http-nio-8081-exec-1] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [1,272] milliseconds.
+2020-06-26 19:47:50 [main] INFO  d.g.o.OnlineBoutiqueApplication - Starting OnlineBoutiqueApplication on NB-MT with PID 3900 (C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart\target\classes started by tmp in C:\Oberordner\Studium\6.Semester\GCA\Abschlussprojekt\Projekt\GCA\api\cart)
+2020-06-26 19:47:50 [main] INFO  d.g.o.OnlineBoutiqueApplication - No active profile set, falling back to default profiles: default
+2020-06-26 19:47:52 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8081 (http)
+2020-06-26 19:47:52 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-26 19:47:52 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.35]
+2020-06-26 19:47:52 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2020-06-26 19:47:52 [main] INFO  o.s.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 2001 ms
+2020-06-26 19:47:53 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32456db0, org.springframework.security.web.context.SecurityContextPersistenceFilter@50a13c2f, org.springframework.security.web.header.HeaderWriterFilter@f0020b1, org.springframework.security.web.authentication.logout.LogoutFilter@5dcd0cdf, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6361b799, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@53c99b09, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4997552e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f5827d0, org.springframework.security.web.session.SessionManagementFilter@76f881d9, org.springframework.security.web.access.ExceptionTranslationFilter@40ac6b76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4519f676]
+2020-06-26 19:47:53 [main] INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-26 19:47:53 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8081 (http) with context path ''
+2020-06-26 19:47:53 [main] INFO  d.g.o.OnlineBoutiqueApplication - Started OnlineBoutiqueApplication in 4.341 seconds (JVM running for 6.898)
+2020-06-26 19:47:56 [http-nio-8081-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-26 19:47:56 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-26 19:47:56 [http-nio-8081-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 13 ms
+2020-06-26 19:47:57 [http-nio-8081-exec-2] WARN  o.a.c.util.SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [752] milliseconds.
