@@ -1,6 +1,10 @@
 package de.gca1.onlineBoutique;
 
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +42,10 @@ public class CheckoutController {
 
     @RequestMapping("/api/checkout/validate")
     @CrossOrigin(origins = "*")
+    @CircuitBreaker(name = "checkoutServiceCircuitBreaker", fallbackMethod = "getDefaultResponse")
+    @RateLimiter(name = "checkoutServiceRateLimiter")
+    @Bulkhead(name = "checkoutServiceBulkhead")
+    @Retry(name = "checkoutServiceRetry")
     public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) {
 
         OrderSummary orderSummary = new OrderSummary();
@@ -182,4 +190,8 @@ public class CheckoutController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
+    public ResponseEntity<OrderSummary> getDefaultResponse(HttpServletRequest req, Exception e) {
+        logger.error("Circuit-Breaker: Break Circuit: " + e.toString());
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+    }
 }
