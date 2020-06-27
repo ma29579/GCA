@@ -4,6 +4,7 @@ import io.vertx.circuitbreaker.CircuitBreaker;
 import io.vertx.circuitbreaker.CircuitBreakerOptions;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpClientOptions;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.client.WebClient;
 import io.vertx.ext.web.client.WebClientOptions;
 import org.apache.tomcat.util.codec.binary.Base64;
@@ -93,11 +94,19 @@ public class CartController {
 
                     circuitBreaker.executeWithFallback(
                             future -> {
-                                client.getAbs("http://httpstat.us/200?sleep=3000").putHeader("Authorization", authHeaderValue).send(response -> {
+                                client.getAbs(env.getProperty("catalogApi") + i.toString()).putHeader("Authorization", authHeaderValue).send(response -> {
                                     if(response.failed()){
                                         future.fail("FEHLER");
                                     } else {
-                                        System.out.println("PASST");
+
+                                        JsonObject product = response.result().bodyAsJsonObject();
+                                        int id = ((Long) product.getLong("id")).intValue();
+                                        String name = (String) product.getString("name");
+                                        double price = (Double) product.getDouble("price");
+                                        String description = (String) product.getString("description");
+                                        String imageUrl = (String) product.getString("imageUrl");
+
+                                        cartProducts.add(new Product(id, name, price, description, imageUrl));
                                         future.complete();
                                     }
                                 });
