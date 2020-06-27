@@ -40,13 +40,27 @@ public class CheckoutController {
     @Autowired
     private Environment env;
 
+    public ResponseEntity<OrderSummary> getDefaultOrder(HttpServletRequest req, Exception e){
+        System.out.println(e.toString());
+        System.out.println("CB-FALLBACK!");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+    }
+
     @RequestMapping("/api/checkout/validate")
     @CrossOrigin(origins = "*")
+<<<<<<< Updated upstream
     @CircuitBreaker(name = "checkoutServiceCircuitBreaker", fallbackMethod = "getDefaultResponse")
     @RateLimiter(name = "checkoutServiceRateLimiter")
     @Bulkhead(name = "checkoutServiceBulkhead")
     @Retry(name = "checkoutServiceRetry")
     public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) throws IOException, ParseException {
+=======
+    @CircuitBreaker(name = "checkoutServiceCircuitBreaker", fallbackMethod = "getDefaultOrder")
+    @RateLimiter(name = "checkoutServiceRateLimiter")
+    @Bulkhead(name = "checkoutServiceBulkhead", type = Bulkhead.Type.SEMAPHORE)
+    @Retry(name = "checkoutServiceRetry")
+    public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) {
+>>>>>>> Stashed changes
 
         OrderSummary orderSummary = new OrderSummary();
 

@@ -56,7 +56,7 @@ public class CartController {
     @CrossOrigin(origins = "*")
     @CircuitBreaker(name = "cartServiceCircuitBreaker", fallbackMethod = "getDefaultProducts")
     @RateLimiter(name = "cartServiceRateLimiter")
-    @Bulkhead(name = "cartServiceBulkhead",type = Bulkhead.Type.THREADPOOL)
+    @Bulkhead(name = "cartServiceBulkhead", type = Bulkhead.Type.SEMAPHORE)
     @Retry(name = "cartServiceRetry")
     //@TimeLimiter(name = "cartServiceTimeLimiter")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
@@ -124,6 +124,7 @@ public class CartController {
     }
 
     public ArrayList<Product> getDefaultProducts(UUID userID, Exception e){
+        System.out.println(e.toString());
         System.out.println("CB-FALLBACK!");
         return new ArrayList<Product>();
     }

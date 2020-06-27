@@ -58,6 +58,7 @@ public class CatalogController {
     @RequestMapping("/api/catalog/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Object> getProductById(@PathVariable("id") int id) {
+
         if(id >= productList.size()) {
             logger.error("Eingabe einer ungültigen Produkt-ID", id);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
