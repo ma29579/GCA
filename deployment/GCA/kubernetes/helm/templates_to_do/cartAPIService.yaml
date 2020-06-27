@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cart-api
+  labels:
+    run: cart-api
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8081
+    protocol: TCP
+  selector:
+    run: cart-api

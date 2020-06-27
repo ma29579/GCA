@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-shipping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database-shipping
+  template:
+    metadata:
+      labels:
+        app: database-shipping
+    spec:
+      containers:
+        - name: database-shipping
+          image: postgres:10.4
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: database-shipping-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgredb
+            - mountPath: /docker-entrypoint-initdb.d
+              name: init-directory
+            - mountPath: /var/lib/test
+              name: init-directory
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: databaseshipping-pv-claim
+        - name: init-directory
+          configMap:
+            name: shipping-init

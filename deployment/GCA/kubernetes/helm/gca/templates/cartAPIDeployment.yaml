@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: cart-api
+  template:
+    metadata:
+      labels:
+        run: cart-api
+    spec:
+      containers:
+      - name: cart-api
+        image: mthom1035/gca_deployment:cart_api
+        ports:
+        - containerPort: 8081
+        env:
+          - name: CART_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: cart_api_username
+          - name: CART_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: cart_api_password
+          - name: CHECKOUT_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_username
+          - name: CHECKOUT_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_password
+          - name: FRONTEND_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_username
+          - name: FRONTEND_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_password
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"

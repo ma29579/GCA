@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: checkout-api
+  template:
+    metadata:
+      labels:
+        run: checkout-api
+    spec:
+      containers:
+      - name: checkout-api
+        image: mthom1035/gca_deployment:checkout_api
+        ports:
+        - containerPort: 8083

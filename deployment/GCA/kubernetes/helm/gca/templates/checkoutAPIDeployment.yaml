@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkout-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: checkout-api
+  template:
+    metadata:
+      labels:
+        run: checkout-api
+    spec:
+      containers:
+      - name: checkout-api
+        image: mthom1035/gca_deployment:checkout_api
+        ports:
+        - containerPort: 8083
+        env:
+          - name: CART_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: cart_api_username
+          - name: CART_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: cart_api_password
+          - name: CHECKOUT_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_username
+          - name: CHECKOUT_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_password
+          - name: FRONTEND_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_username
+          - name: FRONTEND_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_password
+          - name: SHIPPING_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: shipping_api_username
+          - name: SHIPPING_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: shipping_api_password
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"
+        

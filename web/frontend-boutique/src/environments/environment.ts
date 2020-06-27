@@ -5,7 +5,12 @@
 export const environment = {
   production: false,
   userName: 'frontendUser',
-  password: 'frontendPassword'
+  password: 'frontendPassword',
+  catalogApi: 'http://localhost/api/catalog',
+  cartApi: 'http://localhost/api',
+  shippingApi: 'http://localhost/api',
+  checkoutApi: 'http://localhost/api',
+  CATALOG_API_SERVICE_HOST: $ENV.CATALOG_API_SERVICE_HOST
 };
 
 /*

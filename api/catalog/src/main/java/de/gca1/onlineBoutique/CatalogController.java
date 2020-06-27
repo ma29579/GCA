@@ -29,7 +29,7 @@ public class CatalogController {
 
 
 
-    @GetMapping("/catalog")
+    @GetMapping("/api/catalog")
     @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts() {
         // Load data
@@ -40,7 +40,7 @@ public class CatalogController {
         return productList;
     }
 
-    @RequestMapping("/pictures/{id}")
+    @RequestMapping("/api/catalog/pictures/{id}")
     @CrossOrigin(origins = "*")
     public void getPicture(HttpServletResponse response, @PathVariable("id") int id){
 
@@ -55,7 +55,7 @@ public class CatalogController {
 
     }
 
-    @RequestMapping("/catalog/{id}")
+    @RequestMapping("/api/catalog/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Object> getProductById(@PathVariable("id") int id) {
         if(id >= productList.size()) {

@@ -1,6 +1,10 @@
 package de.gca1.onlineBoutique;
 
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,9 +40,13 @@ public class CheckoutController {
     @Autowired
     private Environment env;
 
-    @RequestMapping("/checkout/validate")
+    @RequestMapping("/api/checkout/validate")
     @CrossOrigin(origins = "*")
-    public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) {
+    @CircuitBreaker(name = "checkoutServiceCircuitBreaker", fallbackMethod = "getDefaultResponse")
+    @RateLimiter(name = "checkoutServiceRateLimiter")
+    @Bulkhead(name = "checkoutServiceBulkhead")
+    @Retry(name = "checkoutServiceRetry")
+    public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) throws IOException, ParseException {
 
         OrderSummary orderSummary = new OrderSummary();
 
@@ -174,12 +182,18 @@ public class CheckoutController {
 
         } catch (ConnectException e){
             logger.error("Verbindungsaufbau fehlgeschlagen!", e);
+            throw e;
         } catch (IOException e) {
             logger.error("Response-Body konnte nicht ausgelesen werden!",e);
+            throw e;
         } catch (ParseException e) {
-            logger.error("JSON konnte nicht geparst werden!",e);
+            logger.error("JSON konnte nicht geparst werden!", e);
+            throw e;
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
     }
 
+    public ResponseEntity<OrderSummary> getDefaultResponse(HttpServletRequest req, Exception e) {
+        logger.error("Circuit-Breaker: Break Circuit: " + e.toString());
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(null);
+    }
 }

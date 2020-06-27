@@ -1,0 +1,6 @@
+### Catalog-API - Backend ###
+FROM openjdk:11.0.7-jre
+VOLUME /tmp
+ARG JAR_FILE=catalogAPI.jar
+COPY ${JAR_FILE} catalogAPI.jar
+ENTRYPOINT ["java","-jar","/catalogAPI.jar"]

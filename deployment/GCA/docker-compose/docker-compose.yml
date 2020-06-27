@@ -1,0 +1,48 @@
+version: '3'
+services:
+  frontend:
+    build: ./Frontend
+    ports:
+      - "80:80"
+  catalog-api:
+    build: ./Catalog
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+  cart-api:
+    build: ./Cart
+    expose: 
+      - "8081"
+    ports:
+      - "8081:8081"
+  shipping-api:
+    build: ./Shipping
+    expose: 
+      - "8082"
+    ports: 
+      - "8082:8082"
+  checkout-api:
+    build: ./Checkout
+    volumes: 
+      - ~/GCA/Checkout:/Checkout.log
+    expose: 
+      - "8083"
+    ports:
+      - "8083:8083"
+  database-cart:
+    image: "postgres" # use latest official postgres version
+    ports:
+      - "5432:5432"
+    env_file:
+      - ./DB_Cart/database.env # configure postgres
+    volumes:
+      - ./DB_Cart/schema.sql:/docker-entrypoint-initdb.d/schema.sql
+  database-shipping:
+    image: "postgres" # use latest official postgres version
+    ports:
+      - "5433:5432"
+    env_file:
+      - ./DB_Shipping/database.env # configure postgres
+    volumes:
+      - ./DB_Shipping/schema.sql:/docker-entrypoint-initdb.d/schema.sql

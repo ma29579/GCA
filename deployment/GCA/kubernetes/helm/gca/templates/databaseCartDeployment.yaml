@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database-cart
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database-cart
+  template:
+    metadata:
+      labels:
+        app: database-cart
+    spec:
+      containers:
+        - name: database-cart
+          image: postgres:10.4
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          envFrom:
+            - configMapRef:
+                name: database-cart-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgredb
+            - mountPath: /docker-entrypoint-initdb.d
+              name: init-directory
+            - mountPath: /var/lib/test
+              name: init-directory
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: databasecart-pv-claim
+        - name: init-directory
+          configMap:
+            name: cart-init

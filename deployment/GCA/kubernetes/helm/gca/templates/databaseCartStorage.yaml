@@ -1,0 +1,29 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: postgres-pv-cart-volume
+  labels:
+    type: local
+    app: database-cart
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 50Mi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/mnt/dataCart"
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: databasecart-pv-claim
+  labels:
+    app: database-cart
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 50Mi
