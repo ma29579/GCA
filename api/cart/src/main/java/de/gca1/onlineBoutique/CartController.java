@@ -1,5 +1,10 @@
 package de.gca1.onlineBoutique;
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.core.env.Environment;
 import org.json.simple.JSONObject;
@@ -18,6 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -48,6 +54,11 @@ public class CartController {
 
     @RequestMapping("/api/cart/{userID}")
     @CrossOrigin(origins = "*")
+    @CircuitBreaker(name = "cartServiceCircuitBreaker", fallbackMethod = "getDefaultProducts")
+    @RateLimiter(name = "cartServiceRateLimiter")
+    @Bulkhead(name = "cartServiceBulkhead",type = Bulkhead.Type.THREADPOOL)
+    @Retry(name = "cartServiceRetry")
+    //@TimeLimiter(name = "cartServiceTimeLimiter")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
 
         ArrayList<Integer> itemsByID = new ArrayList<>();
@@ -110,6 +121,11 @@ public class CartController {
 
         return null;
 
+    }
+
+    public ArrayList<Product> getDefaultProducts(UUID userID, Exception e){
+        System.out.println("CB-FALLBACK!");
+        return new ArrayList<Product>();
     }
 
     @RequestMapping("/api/cart/itemNumber/{userID}")
