@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: database-shipping-config
+  labels:
+    app: database-shipping
+data:
+  POSTGRES_DB: shipping
+  POSTGRES_USER: gca
+  POSTGRES_PASSWORD: gca

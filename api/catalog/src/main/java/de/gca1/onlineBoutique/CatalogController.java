@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 @RestController
@@ -26,7 +27,9 @@ public class CatalogController {
     private static final Logger logger = LoggerFactory.getLogger(CatalogController.class);
     private ArrayList<Product> productList;
 
-    @GetMapping("/catalog")
+
+
+    @GetMapping("/api/catalog")
     @CrossOrigin(origins = "*")
     public ArrayList<Product> getProducts() {
         // Load data
@@ -37,7 +40,7 @@ public class CatalogController {
         return productList;
     }
 
-    @RequestMapping("/pictures/{id}")
+    @RequestMapping("/api/catalog/pictures/{id}")
     @CrossOrigin(origins = "*")
     public void getPicture(HttpServletResponse response, @PathVariable("id") int id){
 
@@ -52,7 +55,7 @@ public class CatalogController {
 
     }
 
-    @RequestMapping("/catalog/{id}")
+    @RequestMapping("/api/catalog/{id}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Object> getProductById(@PathVariable("id") int id) {
         if(id >= productList.size()) {
@@ -68,8 +71,9 @@ public class CatalogController {
         productList = new ArrayList<Product>();
 
         try {
-            String filePath = new File("").getAbsolutePath();
-            JSONArray jsonArray = (JSONArray) jsonParser.parse(new FileReader(filePath +"\\src\\main\\resources\\products.json"));
+            var jsonFile = new ClassPathResource("/products.json");
+            JSONArray jsonArray = (JSONArray) jsonParser.parse(new InputStreamReader(new ClassPathResource("/products.json").getInputStream()));
+
             for (int i =0; i< jsonArray.size(); i++) {
                 JSONObject temp = (JSONObject) jsonArray.get(i);
 

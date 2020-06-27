@@ -24,7 +24,7 @@ export class CheckoutService {
         'Authorization': `Basic ` + btoa(`${environment.userName}:${environment.password}`)
       })
     };
-    return this.http.post('//localhost:8083/checkout/validate', cart, httpOptions);
+    return this.http.post(environment.checkoutApi + '/checkout/validate', cart, httpOptions);
   }
 
 }

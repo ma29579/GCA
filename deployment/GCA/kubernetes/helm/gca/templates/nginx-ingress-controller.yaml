@@ -1,0 +1,30 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gca-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - http:
+      paths:
+        - path: /api/cart/
+          backend:
+            serviceName: cart-api
+            servicePort: 8081
+        - path: /api/catalog/
+          backend:
+            serviceName: catalog-api
+            servicePort: 8080
+        - path: /api/shipping/
+          backend:
+            serviceName: shipping-api
+            servicePort: 8082
+        - path: /api/checkout/
+          backend:
+            serviceName: checkout-api
+            servicePort: 8083
+        - path: /
+          backend:
+            serviceName: gca-frontend
+            servicePort: 80

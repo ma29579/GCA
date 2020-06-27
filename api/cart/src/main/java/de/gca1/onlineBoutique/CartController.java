@@ -1,5 +1,10 @@
 package de.gca1.onlineBoutique;
 
+import io.github.resilience4j.bulkhead.annotation.Bulkhead;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
+import io.github.resilience4j.timelimiter.annotation.TimeLimiter;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.core.env.Environment;
 import org.json.simple.JSONObject;
@@ -18,6 +23,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,7 +37,7 @@ public class CartController {
     @Autowired
     private Environment env;
 
-    @RequestMapping("/cart/addProduct/{productID}/{userID}")
+    @RequestMapping("/api/cart/addProduct/{productID}/{userID}")
     @CrossOrigin(origins = "*")
     public ResponseEntity<Boolean> addProduct(@PathVariable("productID") int productID, @PathVariable("userID") UUID userID) {
 
@@ -46,8 +52,13 @@ public class CartController {
         }
     }
 
-    @RequestMapping("/cart/{userID}")
+    @RequestMapping("/api/cart/{userID}")
     @CrossOrigin(origins = "*")
+    @CircuitBreaker(name = "cartServiceCircuitBreaker", fallbackMethod = "getDefaultProducts")
+    @RateLimiter(name = "cartServiceRateLimiter")
+    @Bulkhead(name = "cartServiceBulkhead",type = Bulkhead.Type.THREADPOOL)
+    @Retry(name = "cartServiceRetry")
+    //@TimeLimiter(name = "cartServiceTimeLimiter")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
 
         ArrayList<Integer> itemsByID = new ArrayList<>();
@@ -70,6 +81,7 @@ public class CartController {
 
             for (Integer i : itemsByID) {
                 try {
+                    
                     url = new URL( env.getProperty("catalogApi") + i.toString());
 
 
@@ -111,7 +123,12 @@ public class CartController {
 
     }
 
-    @RequestMapping("/cart/itemNumber/{userID}")
+    public ArrayList<Product> getDefaultProducts(UUID userID, Exception e){
+        System.out.println("CB-FALLBACK!");
+        return new ArrayList<Product>();
+    }
+
+    @RequestMapping("/api/cart/itemNumber/{userID}")
     @CrossOrigin(origins = "*")
     public int getItemNumber(@PathVariable("userID") UUID userID) {
 
@@ -128,7 +145,7 @@ public class CartController {
     }
 
 
-    @RequestMapping("/cart/init")
+    @RequestMapping("/api/cart/init")
     @CrossOrigin(origins = "*")
     public ResponseEntity<User> createUserID() {
 
@@ -145,7 +162,7 @@ public class CartController {
         }
     }
 
-    @RequestMapping("/cart/empty/{userID}")
+    @RequestMapping("/api/cart/empty/{userID}")
     @CrossOrigin(origins = "*")
     public void emptyCartByUserID(@PathVariable("userID") UUID userID) {
 

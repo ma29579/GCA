@@ -17,12 +17,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private Environment env;
+
     // Securing the urls and allowing role-based access to these urls.
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.httpBasic().and().authorizeRequests()
                 .antMatchers("/security/guest").hasRole("USER")
-                .antMatchers("/pictures/**").permitAll()
+                .antMatchers("/api/catalog/pictures/**").permitAll()
                 .antMatchers(HttpMethod.OPTIONS, "**").permitAll()
                 .antMatchers("/security/admin").hasRole("ADMIN")
                 .anyRequest().authenticated()

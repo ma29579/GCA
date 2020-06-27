@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: shipping-api
+  template:
+    metadata:
+      labels:
+        run: shipping-api
+    spec:
+      containers:
+      - name: shipping-api
+        image: mthom1035/gca_deployment:shipping_api
+        ports:
+        - containerPort: 8082
+        env:
+          - name: CHECKOUT_API_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_username
+          - name: CHECKOUT_API_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: checkout_api_password
+          - name: FRONTEND_USERNAME
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_username
+          - name: FRONTEND_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: api-credentials
+                key: frontend_password
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "500m"

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipping-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: shipping-api
+  template:
+    metadata:
+      labels:
+        run: shipping-api
+    spec:
+      containers:
+      - name: shipping-api
+        image: mthom1035/gca_deployment:shipping_api
+        ports:
+        - containerPort: 8082

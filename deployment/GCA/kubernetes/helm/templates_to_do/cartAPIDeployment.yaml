@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cart-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: cart-api
+  template:
+    metadata:
+      labels:
+        run: cart-api
+    spec:
+      containers:
+      - name: cart-api
+        image: gca_cart-api
+        ports:
+        - containerPort: 8081
