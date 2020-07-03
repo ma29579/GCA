@@ -50,6 +50,10 @@ spec:
                 key: frontend_password
         resources:
           requests:
-            cpu: "250m"
+            cpu: "150m"
+            memory: "100Mi"
           limits:
-            cpu: "500m"
+            cpu: "250m"
+            memory: "250Mi"
+
+            

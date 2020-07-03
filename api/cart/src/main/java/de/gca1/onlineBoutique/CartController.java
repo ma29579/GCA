@@ -56,7 +56,7 @@ public class CartController {
     @CrossOrigin(origins = "*")
     @CircuitBreaker(name = "cartServiceCircuitBreaker", fallbackMethod = "getDefaultProducts")
     @RateLimiter(name = "cartServiceRateLimiter")
-    @Bulkhead(name = "cartServiceBulkhead",type = Bulkhead.Type.THREADPOOL)
+    @Bulkhead(name = "cartServiceBulkhead",type = Bulkhead.Type.SEMAPHORE)
     @Retry(name = "cartServiceRetry")
     //@TimeLimiter(name = "cartServiceTimeLimiter")
     public ArrayList<Product> getProducts(@PathVariable("userID") UUID userID) {
@@ -90,6 +90,8 @@ public class CartController {
                     String authHeaderValue = "Basic " + new String(encodedAuth);
                     connection = (HttpURLConnection) url.openConnection();
                     connection.setRequestProperty("Authorization", authHeaderValue);
+                    connection.setConnectTimeout(5000);
+                    connection.setReadTimeout(5000);
 
                     if (connection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         JSONObject product = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));

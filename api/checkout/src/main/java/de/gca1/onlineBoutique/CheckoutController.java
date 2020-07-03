@@ -44,7 +44,7 @@ public class CheckoutController {
     @CrossOrigin(origins = "*")
     @CircuitBreaker(name = "checkoutServiceCircuitBreaker", fallbackMethod = "getDefaultResponse")
     @RateLimiter(name = "checkoutServiceRateLimiter")
-    @Bulkhead(name = "checkoutServiceBulkhead")
+    @Bulkhead(name = "checkoutServiceBulkhead",type = Bulkhead.Type.SEMAPHORE)
     @Retry(name = "checkoutServiceRetry")
     public ResponseEntity<OrderSummary> validateOrder(HttpServletRequest req) throws IOException, ParseException {
 
@@ -92,6 +92,8 @@ public class CheckoutController {
             byte[] encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
             String authHeaderValue = "Basic " + new String(encodedAuth);
             connection.setRequestProperty("Authorization", authHeaderValue);
+            connection.setConnectTimeout(5000);
+            connection.setReadTimeout(5000);
 
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
@@ -133,6 +135,9 @@ public class CheckoutController {
 
             connection = (HttpURLConnection) shippingAPI.openConnection();
             connection.setRequestProperty("Authorization", authHeaderValue);
+            connection.setConnectTimeout(5000);
+            connection.setReadTimeout(5000);
+
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
                 InputStream inputStream = connection.getInputStream();
@@ -159,7 +164,8 @@ public class CheckoutController {
             encodedAuth = Base64.encodeBase64(auth.getBytes(StandardCharsets.UTF_8));
             authHeaderValue = "Basic " + new String(encodedAuth);
             connection.setRequestProperty("Authorization", authHeaderValue);
-
+            connection.setConnectTimeout(5000);
+            connection.setReadTimeout(5000);
             if(connection.getResponseCode() == HttpURLConnection.HTTP_OK){
 
                 JSONObject orderInformation = (JSONObject) new JSONParser().parse(new InputStreamReader(connection.getInputStream()));

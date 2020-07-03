@@ -1,7 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ec146b9-54ac-40a0-b8ca-eda8c7ad307a" name="Default Changelist" comment="" />
+    <list default="true" id="5ec146b9-54ac-40a0-b8ca-eda8c7ad307a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/java/de/gca1/onlineBoutique/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart/src/main/java/de/gca1/onlineBoutique/CartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/cart/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart/src/main/resources/products.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/src/main/java/de/gca1/onlineBoutique/CatalogRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/catalog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/catalog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/src/main/java/de/gca1/onlineBoutique/CheckoutController.java" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/src/main/java/de/gca1/onlineBoutique/CheckoutController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkout/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shipping/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/shipping/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/NOTES.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/NOTES.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/_helpers.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/_helpers.tpl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/cartAPIDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/cartAPIDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/cartAPIService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/cartAPIService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/cartHPA.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/cartHPA.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/catalogAPIDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/catalogAPIDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/catalogAPIService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/catalogAPIService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/catalogHPA.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/catalogHPA.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/checkoutAPIDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/checkoutAPIDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/checkoutHPA.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/checkoutHPA.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/credentials.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/credentials.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartConfig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartConfig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartInit.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartInit.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartStorage.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseCartStorage.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingConfig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingConfig.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingInit.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingInit.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingStorage.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/databaseShippingStorage.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/frontendDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/frontendDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/frontendService.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/frontendService.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/hpa.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/hpa.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/ingress.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/ingress.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/nginx-ingress-controller.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/nginx-ingress-controller.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/serviceaccount.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/serviceaccount.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/shippingAPIDeployment.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/shippingAPIDeployment.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/shippingHPA.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/shippingHPA.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/tests/test-connection.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/gca/templates/tests/test-connection.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/templates_to_do/cartAPIDeployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/templates_to_do/cartAPIService.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/templates_to_do/checkoutAPIDeployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/templates_to_do/checkoutAPIService.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/templates_to_do/shippingAPIDeployment.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../deployment/GCA/kubernetes/helm/templates_to_do/shippingAPIService.yaml" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +61,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/catalog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -47,6 +92,8 @@
       <workItem from="1591551369260" duration="70000" />
       <workItem from="1591862056714" duration="329000" />
       <workItem from="1593072523230" duration="1323000" />
+      <workItem from="1593760376645" duration="1002000" />
+      <workItem from="1593764961615" duration="657000" />
     </task>
     <servers />
   </component>
